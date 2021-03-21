@@ -1,23 +1,42 @@
 set hlsearch
 set ignorecase
-set autoindent
-
+"set autoindent
+"set noshowmode
+set clipboard=unnamed
 "tratando de fixear esa madre de press enter to continue
 set cmdheight=2
 "comando del lightline
-set laststatus=2
+set ls=1
+set lbr
+" enable indentation
+set breakindent
+
+"wrap de la lineas
+set wrap
+set so=4
+set siso=4
+set si
+set sta
+
+" append '>>' to indent
+set showbreak=>>>>>
 "color del downline schme
+
 let g:lightline = {
 			\ 'active':{
+			\'left':[['mode','paste'],[], ['relativepath','modified']],
+			\'right':[['kitestatus'],['filetype','percent', 'lineinfo'],['gitbranch']]
+			\},
+			\ 'inactive':{
 			\'left':[['inactive'], ['relativepath']],
-			\'right':[['bufnum']]
+			\'right':['bufnum']
 			\},
 			\'component': {
 			\'bufnum': '%n',
-			\'inactive':'inactive'
+			\'inactive': 'inactive',
 			\},
 			\'component_function':{
-			\'gitbranch':'fugitive#head',
+			\'gitbranch':'fugitivehead',
 			\'kitestatus':'kitestatusline'
 			\},
 			\'colorscheme': 'one',
@@ -27,9 +46,10 @@ let g:lightline = {
 			\}
 			\}
 
+
+
 "texto
 syntax on
-
 "interface
 set ruler
 set relativenumber
@@ -48,11 +68,11 @@ nnoremap <Right> <NOP>
 nnoremap <Up> <NOP>
 nnoremap <Down> <NOP>
 
-let g:coc_disable_startup_warning = 1
+"let g:coc_disable_startup_warning = 1
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'itchyny/lightline.vim'
 Plug 'morhetz/gruvbox'
 Plug 'mbbill/undotree'
@@ -62,7 +82,6 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 call plug#end()
 
-set noshowmode
 "color del tema
 colorscheme gruvbox
 set background=dark
@@ -97,32 +116,26 @@ nnoremap <leader>< 10<C-w><
 nnoremap<leader>a G<CR>
 nnoremap<leader>w :w<CR>
 "kite
-let g:kite_supported_languages = ['javascript', 'CSS']
+let g:kite_supported_languages = ['*']
 let g:kite_tab_complete=1
 set completeopt+=preview
 set completeopt+=menuone
 set completeopt+=noinsert
 let g:kite_snippets=0
+
+autocmd filetype javascript "let b:coc_suggest_disable = 1
+autocmd filetype HTML/CSS "let b:coc_suggest_disable = 1
+
+"if &filetype=="javascript" || &filetype=="HTML/CSS"
+"	inoremap <C-space><C-x><C-u>
+"else
+"	inoremap <silent><expr><C-space> coc#fresh()
+"endif
+
+
 autocmd CompleteDone * if !pumvisible() | pclose | endif
-autocmd filetype javascript let b:coc_suggest_disable = 1
-autocmd filetype HTML/CSS let b:coc_suggest_disable = 1
-
-if &filetype=="javascript" || &filetype=="HTML/CSS"
-	inoremap <C-space><C-x><C-u>
-else
-	inoremap <silent><expr><C-space> coc#fresh()
-endif
 
 
-function! Tab_jump_or_win_move()
-  let l = line(".")
-  let c = col(".")
-  let b = bufnr("%")
-  exe "normal! \<Esc>\<Tab>"
-  if l == line(".") && c == col(".") && b == bufnr("%")
-    call feedkeys( "\<c-w>\<c-w>", "t" )
-  endif
-endfunction
-nnoremap <silent> <Tab> :call Tab_jump_or_win_move()<CR>
-
-
+"mapeo de la copia global
+vmap <leader>y :w! /tmp/vitmp<CR>                                                                   
+nmap <leader>p :r! cat /tmp/vitmp<CR>
