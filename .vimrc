@@ -117,6 +117,10 @@ if executable('rg')
 endif
 
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+
+
+
 "set del espacioo como 'combo de habilidades'
 let mapleader =" "
 "mapeo del tab nueva tab
@@ -165,3 +169,6 @@ autocmd CompleteDone * if !pumvisible() | pclose | endif
 "mapeo de la copia global
 vmap <leader>y :w! /tmp/vitmp<CR>                                                                   
 nmap <leader>p :r! cat /tmp/vitmp<CR>
+nmap <leader>ni :r! cat ~/.nodeSnips/index<CR>
+nmap <leader>nc :r! cat ~/.nodeSnips/collation/<CR>
+nmap <leader>nb :r! cat ~/.nodeSnips/serverDb<CR>
