@@ -1,0 +1,11 @@
+const mongoose = require("mongoose");
+
+mongoose.connect("mongodb://localhost:27017/", 
+	{ useNewUrlParser: true }, 
+	(error) => {
+		if (!error) {
+			console.log("La conexion a la bd tuvo exito");
+		} else {
+			console.log("error al conectar");
+		}
+	});

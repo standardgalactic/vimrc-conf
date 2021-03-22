@@ -1,0 +1,26 @@
+
+const connection 	= require("./model");
+const express 		= require("express");
+const path 		= require("path");
+
+const bodyParser = require("body-parser");
+
+
+const app = express();
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}))
+
+
+
+//folder estatico
+app.use(express.static(path.join(__dirname, './public')))
+app.use('/css', express.static(path.join(__dirname, './public/css')))
+app.use('/src', express.static(path.join(__dirname, './public/src')))
+app.use('/js', express.static(path.join(__dirname, './public/js')))
+
+
+var PORT= process.env.PORT || borraEstoEIngresaNumeroDePuerto;
+app.listen(PORT,()=>{ 
+	console.log(`Server running at: ${PORT}`)
+});
