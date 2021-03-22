@@ -1,17 +1,21 @@
 # vimrc-conf
-Primero descarga los archivos 
+Primero descarga los archivos: 
 1 index
 2 collation
 3 serverDb
 
-Después, en tu archivo .vimrc agrega la siguiente linea => let mapleader =" " 
+Después, en tu archivo .vimrc agrega la siguiente linea => let mapleader =" ";
+
 cd ~/
 vim .vimrc
-presiona i para entrar en modod de insercion y despues la combinacion de teclas ctrl+ shift+ v para pegar desde la papelera
+
+Presiona 'i' para cambiar a modo de inserción y después la combinación de teclas ctrl+ shift+ v para pegar desde la papelera
 
 let mapleader =" " 
 
-presiona =>  'esc' + ':' +'w'+ 'q' + 'enter'
+Para guardar tu archivo una vez que hayas agregado la linea de ´"ḿap leader",
+presiona =>  'esc' + ':' +'w'+ 'q' + 'enter'.
+
 
 
 
@@ -28,7 +32,7 @@ mv -t ~/.nodeSnips serverDb index collation
 
 
 ¡¡LISTO!!
-DISFRUTA de tus templates con los comando en modo de edicion  NORMAL 
+DISFRUTA de tus templates para vim con los comando en modo de edicion  NORMAL 
 
 
 <espacio> + ni = template estandar de index node
