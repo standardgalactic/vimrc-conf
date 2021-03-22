@@ -1,0 +1,22 @@
+const mongoose = require("mongoose");
+
+var ingresaElNombreDeLaFuncionAModelar= new mongoose.Schema({
+  ingresaNombreDelCampo: {
+    type: String,
+    required: "Required"
+  },
+  ingresaNombreDelCampo: {
+    type: String,
+    required: "Required"
+  },
+  ingresaNombreDelCampo: {
+    type: String,
+    required: "Required"
+  },
+  ingresaNombreDelUltimoCampo: {
+    type: String,
+    required: "Required",
+  }
+});
+
+mongoose.model("ingresaNombreDeLaBaseDeDatos", ingresaElNombreDeLaFuncionAModelar);
