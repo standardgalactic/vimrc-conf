@@ -1,0 +1,9 @@
+
+Este es el git de mis
+configuraciones de vim con atajos para
+react y node.
+
+en esta carpeta solo hay que actualizar los archivos:
+.vimrc
+
+y copiar los nuevos snipets que necesites.
