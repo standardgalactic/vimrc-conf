@@ -187,4 +187,5 @@ nmap <leader>nb :r! cat ~/.nodeSnips/serverDb<CR>
 nmap <leader>rc :r! cat ~/.nodeSnips/reactComponent<CR>
 nmap <leader>ra :r! cat ~/.nodeSnips/reactApp<CR>
 nmap <leader>re :r! cat ~/.nodeSnips/Effect<CR>
+nmap <leader>rs :r! cat ~/.nodeSnips/States<CR>
 
