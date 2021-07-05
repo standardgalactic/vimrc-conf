@@ -1,0 +1,17 @@
+import React from 'react';
+import styled from 'styled-components'
+
+
+const ingresa = ({children})=>{
+  return(
+  <ingresa>
+  {children}
+  </ingresa>
+
+      )
+}
+export default ingresa;
+
+const ingresa = styled.ingresa`
+
+`

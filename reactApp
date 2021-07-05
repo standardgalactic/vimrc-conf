@@ -1,0 +1,22 @@
+import React, {Component} from 'react';
+import './App.css';
+import algunComponente1 from './components/UserForm';
+import algunComponente2 from './components/ViewList';
+
+class App extends Component {
+	state ={
+	}
+	render(){
+  return (
+    <div className="App">
+
+	  <algunComponente1/>
+	  <algunComponente2/>
+
+
+    </div>
+  );
+}
+}
+
+export default App;
