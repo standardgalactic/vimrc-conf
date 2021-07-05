@@ -36,10 +36,17 @@ DISFRUTA de tus templates para vim con los comando en modo de edicion  NORMAL
 
 
 <espacio> + ni = template estandar de index node
+  
 <espacio> + nb = template estandar para insertar collation de node
+  
 <espacio> + nc = template estandar de conexion mongo - node
+  
 <espacio> + rs = template estandar de useState react - node
+  
 <espacio> + re = template estandar de useEffect react - node
+  
 <espacio> + ra = template estandar de classComponent react - node
+  
 <espacio> + rc = template estandar de functionComponent react - node
+  
 
