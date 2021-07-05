@@ -1,22 +1,19 @@
 import React, {Component} from 'react';
-import './App.css';
-import algunComponente1 from './components/UserForm';
-import algunComponente2 from './components/ViewList';
+import styled from 'styled-components';
 
-class App extends Component {
+export default class c extends Component {
 	state ={
 	}
 	render(){
   return (
-    <div className="App">
+    <ingresa>
+    
+    </ingresa>
 
-	  <algunComponente1/>
-	  <algunComponente2/>
-
-
-    </div>
   );
 }
-}
+};
 
-export default App;
+const ingresa = styled.ingresa`
+
+`

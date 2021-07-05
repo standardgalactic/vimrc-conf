@@ -1,11 +1,12 @@
 set hlsearch
-set ignorecase
+"set ignorecase
 set autoindent
 "set noshowmode
 set cmdheight=1
 "comando del lightline
 set ls=1
 set lbr
+
 "set statusline=%<%f\ %h%m%r%{kite#statusline()}%=%-14.(%l,%c%V%)\ %P
 set laststatus=2  " always display the status line
 "emmet
@@ -108,6 +109,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'mattn/emmet-vim'
 Plug 'morhetz/gruvbox'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 "Plug 'mbbill/undotree'
 "Plug 'leafgarland/typescript-vim'
 Plug 'vim-scripts/CSS-one-line--multi-line-folding'
@@ -138,6 +140,9 @@ nnoremap <leader>2 2gt
 nnoremap <leader>3 3gt
 nnoremap <leader>4 4gt
 nnoremap <leader>5 5gt
+nnoremap <leader>6 6gt
+nnoremap <leader>7 7gt
+nnoremap <leader>8 8gt
 
 "mapeo del movimiento en ventanas
 nnorem	<leader>h :wincmd h<CR>
@@ -150,11 +155,13 @@ nnoremap <leader>> 10<C-w>>
 nnoremap <leader>< 15<C-w><
 "saltar  hasta abajo
 nnoremap<leader>a G<CR>
+vnoremap <leader>aa G<CR>
 "guardado
 nnoremap<leader>w :w<CR>
 nnoremap<leader>q :q<CR>
+"buscar y reemplazar
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
-vnoremap <leader>aa G<CR>
 
 
 "kite
@@ -188,4 +195,5 @@ nmap <leader>rc :r! cat ~/.nodeSnips/reactComponent<CR>
 nmap <leader>ra :r! cat ~/.nodeSnips/reactApp<CR>
 nmap <leader>re :r! cat ~/.nodeSnips/Effect<CR>
 nmap <leader>rs :r! cat ~/.nodeSnips/States<CR>
+nmap <leader>rf :r! cat ~/.nodeSnips/Function<CR>
 

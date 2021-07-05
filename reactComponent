@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components'
 
 
-const ingresa = ({children})=>{
+const c = ({children})=>{
   return(
   <ingresa>
   {children}
@@ -10,7 +10,7 @@ const ingresa = ({children})=>{
 
       )
 }
-export default ingresa;
+export default c;
 
 const ingresa = styled.ingresa`
 
