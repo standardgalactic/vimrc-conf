@@ -1,29 +1,33 @@
 set hlsearch
 set ignorecase
-"set autoindent
+set autoindent
 "set noshowmode
-set clipboard=unnamed
-"tratando de fixear esa madre de press enter to continue
-set cmdheight=2
+set cmdheight=1
 "comando del lightline
 set ls=1
 set lbr
-" enable indentation
-set breakindent
 "set statusline=%<%f\ %h%m%r%{kite#statusline()}%=%-14.(%l,%c%V%)\ %P
 set laststatus=2  " always display the status line
-
+"emmet
+let g:user_emmet_leader_key=','
+let g:user_emmet_mode='n'
+" enable indentation
+set breakindent
 "wrap de la lineas
 set wrap
-set so=4
-set siso=4
+set so=8
+set siso=2
+set shiftwidth=2
 set si
+set nolbr
 set sta
-
+ 	set vsts=3
 " append '>>' to indent
-set showbreak=>>>>>
-"color del downline schme
+set showbreak=>>>
 
+
+
+"color del downline schme
 let g:lightline = {
 			\ 'active':{
 			\'left':[['mode','paste'],[], ['relativepath','modified']],
@@ -62,14 +66,14 @@ function! MyMode()
         \ winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
 augroup filetype_nerdtree
-    au!
-    au FileType nerdtree call s:disable_lightline_on_nerdtree()
-    au WinEnter,BufWinEnter,TabEnter * call s:disable_lightline_on_nerdtree()
+	au!
+	au FileType nerdtree call s:disable_lightline_on_nerdtree()
+	au WinEnter,BufWinEnter,TabEnter * call s:disable_lightline_on_nerdtree()
 augroup END
 
 fu s:disable_lightline_on_nerdtree() abort
-    let nerdtree_winnr = index(map(range(1, winnr('$')), {_,v -> getbufvar(winbufnr(v), '&ft')}), 'nerdtree') + 1
-    call timer_start(0, {-> nerdtree_winnr && setwinvar(nerdtree_winnr, '&stl', '%#Normal#')})
+	let nerdtree_winnr = index(map(range(1, winnr('$')), {_,v -> getbufvar(winbufnr(v), '&ft')}), 'nerdtree') + 1
+	call timer_start(0, {-> nerdtree_winnr && setwinvar(nerdtree_winnr, '&stl', '%#Normal#')})
 endfu
 
 
@@ -87,24 +91,27 @@ set history=10000
 set noswapfile
 set undodir=~/.vim/undodir
 set undofile
-"debailitar las flechas
 
+
+"debailitar las flechas
 nnoremap <Left> <NOP>
 nnoremap <Right> <NOP>
 nnoremap <Up> <NOP>
 nnoremap <Down> <NOP>
 
-"let g:coc_disable_startup_warning = 1
+let g:coc_disable_startup_warning = 1
 
 call plug#begin('~/.vim/plugged')
 
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'itchyny/lightline.vim'
+Plug 'mattn/emmet-vim'
 Plug 'morhetz/gruvbox'
-Plug 'mbbill/undotree'
-Plug 'leafgarland/typescript-vim'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+"Plug 'mbbill/undotree'
+"Plug 'leafgarland/typescript-vim'
 Plug 'vim-scripts/CSS-one-line--multi-line-folding'
-Plug 'scrooloose/nerdcommenter'
+"Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 call plug#end()
 
@@ -125,7 +132,6 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 let mapleader =" "
 "mapeo del tab nueva tab
 nnoremap <C-t> :tabnew<CR>
-inoremap <C-t> <Esc>:tabnew<CR>
 "mapo del movimiento entre tabs 
 nnoremap <leader>1 1gt
 nnoremap <leader>2 2gt
@@ -141,17 +147,23 @@ nnorem	<leader>l :wincmd l<CR>
 
 "mapeo del Vsplit window size<---->
 nnoremap <leader>> 10<C-w>>
-nnoremap <leader>< 10<C-w><
+nnoremap <leader>< 15<C-w><
 "saltar  hasta abajo
 nnoremap<leader>a G<CR>
+"guardado
 nnoremap<leader>w :w<CR>
+nnoremap<leader>q :q<CR>
+
+vnoremap <leader>aa G<CR>
+
+
 "kite
 let g:kite_supported_languages = ['*']
-let g:kite_tab_complete=1
-set completeopt+=preview
-set completeopt+=menuone
-set completeopt+=noinsert
+let g:kite_tab_complete=0
 let g:kite_snippets=0
+"let g:kite_auto_complete=0
+"let g:kite_completions = 0
+set cot=menu,preview,menuone,noinsert
 
 autocmd filetype javascript "let b:coc_suggest_disable = 1
 autocmd filetype HTML/CSS "let b:coc_suggest_disable = 1
@@ -167,8 +179,12 @@ autocmd CompleteDone * if !pumvisible() | pclose | endif
 
 
 "mapeo de la copia global
-vmap <leader>y :w! /tmp/vitmp<CR>                                                                   
+vmap <leader>y :w! /tmp/vitmp<CR>                                           
 nmap <leader>p :r! cat /tmp/vitmp<CR>
 nmap <leader>ni :r! cat ~/.nodeSnips/index<CR>
-nmap <leader>nc :r! cat ~/.nodeSnips/collation/<CR>
+nmap <leader>nc :r! cat ~/.nodeSnips/collation<CR>
 nmap <leader>nb :r! cat ~/.nodeSnips/serverDb<CR>
+nmap <leader>rc :r! cat ~/.nodeSnips/reactComponent<CR>
+nmap <leader>ra :r! cat ~/.nodeSnips/reactApp<CR>
+nmap <leader>re :r! cat ~/.nodeSnips/Effect<CR>
+
