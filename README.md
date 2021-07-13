@@ -6,6 +6,11 @@ Primero descarga los archivos:
 
 Después, en tu archivo .vimrc agrega la siguiente linea => let mapleader =" ";
 
+es Necesario tener el Plugin para manejar plugins => curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+despues abrimos vim y corremos :PlugInstall
+para instalar todos los plugins de nuestro .vimrc
 cd ~/
 vim .vimrc
 
