@@ -1,17 +1,15 @@
 import React from 'react';
-import styled from 'styled-components'
+//import de imagenes
 
+//import de componentes
 
-const c = ({children})=>{
+//estilos
+
+const da = ()=>{
   return(
-  <ingresa>
-  {children}
-  </ingresa>
+  <>
+  </>
 
       )
 }
-export default c;
-
-const ingresa = styled.ingresa`
-
-`
+export default da;

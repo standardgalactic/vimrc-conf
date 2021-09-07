@@ -1,0 +1,48 @@
+.card .img-container.lf{
+  width:80%;
+  background-color:transparent;
+  height:30vh;
+  left:50%;
+  transform:translateX(-50%);
+  background-position:5% 50%;
+  background-repeat:no-repeat;
+  background-size:45% 80%;
+  justify-content:flex-end;
+  align-items:center;
+}
+.card .img-container.lf>p{
+  position:absolute;
+  width:50%;
+}
+
+@media screen and (max-width:768px){
+  .card .img-container.lf{
+    height:20vh;
+    background-position:50% 90% ;
+    background-repeat:no-repeat;
+    background-size:95% 90%;
+  }
+
+}
+.card .img-container.lf>p{
+  position:relative;
+  top:50%;
+  width:100%;
+}
+
+}
+@media screen and (max-width:650px){
+.card .img-container.lf{
+  background-color:transparent;
+    height:45vh;
+    background-size:100% 45%;
+    background-position:50% 30%;
+    align-items:end;
+}
+.card .img-container.lf>p{
+  margin-top:60%;
+  top:auto;
+  position:relative;
+  background-color:transparent;
+  }
+}

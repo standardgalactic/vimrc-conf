@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
 
+const ingresa = styled.ingresa`
+
+`
 export default class c extends Component {
 	state ={
 	}
@@ -14,6 +17,3 @@ export default class c extends Component {
 }
 };
 
-const ingresa = styled.ingresa`
-
-`

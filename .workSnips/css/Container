@@ -1,0 +1,42 @@
+.main-container{
+  position:relative;
+  left:50%;
+  top:0px;
+  transform:translateX(-50%);
+  width:95%;
+  min-height:90vh;
+  height:auto;
+  background-color:white;
+  color:#888;
+  border-radius:5px;
+  box-shadow: 0 0 15px tomato;
+  margin-top:9vh;
+}
+
+/*
+
+ipad
+*/
+
+  .main-container{
+  left:50%;
+  width:95%;
+  min-height:90vh;
+  height:auto;
+  background-color:white;
+  color:#888;
+  border-radius:5px;
+  box-shadow: 0 0 15px tomato;
+  margin-top:9vh;
+}
+
+/*
+movil
+*/
+  .main-container{
+    font-size:1.7rem;
+    min-height:100vh;
+    margin-top:12vh;
+    height:auto;
+  }
+
