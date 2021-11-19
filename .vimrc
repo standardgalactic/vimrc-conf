@@ -4,13 +4,15 @@ filetype plugin on
 set wildmenu
 "set wildchar=1  "numero de chars para que wild se active
 set encoding=utf-8
+"Pum menu"
+set ph=7
 scriptencoding utf-8
 set termencoding=utf-8
 set fillchars =vert:▓,stlnc:░,fold:•,diff:◈,stl:_
 
 "Saludos Vergas
 echo "React?!!!"
-autocmd VimEnter * echo 'We shall never surrender... ¿Comanzamos?'
+autocmd VimEnter * echo '¿Comanzamos?'
 
 set hlsearch
 "set ignorecase
@@ -147,12 +149,12 @@ nnoremap <leader>< 15<C-w><
 "saltar  hasta abajo
 nnoremap <leader>a G<CR>
 vnoremap <leader>aa G=<CR>
-nnoremap <leader>au :set omnifunc=javascriptcomplete#CompleteJS<CR>
+"nnoremap <leader>au :set omnifunc=javascriptcomplete#CompleteJS<CR>
 "guardado
 nnoremap<leader>w :w<CR>
 nnoremap<leader>q :q<CR>
 "buscar y reemplazar
-nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
+nnoremap <Leader>s  :%s/\<<C-r><C-w>\>/
 nnoremap <Leader>ss :saveas 
 "abrir archivo
 "comandos git/ comandos globales
@@ -198,7 +200,7 @@ nmap<silent> <leader>(	   :silent normal f(v%=v%zf<CR>
 nmap<silent> <leader><Tab> :w<CR><C-^>
 
 "buscar un texto dento de los archivos de la carpeta
-nmap <leader>f :! grep -Ril "" ./djlasdja/
+nmap <leader>f :! grep -Ril "" ./
 nmap <leader>ff :g/foo/#
 
 "directory tree
@@ -228,7 +230,9 @@ inoremap <expr> ;i CurrentFiles()
 inoremap <expr> ;l LineComplete()
 inoremap <expr> ;o LanguajeComplete() 
 inoremap <expr> ;n NormalComplete() 
-inoremap <expr> ;m Normal2Complete() 
+inoremap <expr> ;j Normal2Complete() 
+inoremap <expr> ;a SelectOption()
+inoremap <expr> ;w SaveInsert()
 "completado del abecedario"
 inoremap <expr> a ACompletion() 
 inoremap <expr> b BCompletion() 
@@ -260,79 +264,79 @@ func ACompletion()
   return "a\<C-x>\<C-o>"
 endfunc
 func BCompletion()
-  return "b\<C-x>\<C-i>"
+  return "b\<C-x>\<C-n>"
 endfunc
 func CCompletion()
-  return "c\<C-x>\<C-i>"
+  return "c\<C-x>\<C-n>"
 endfunc
 func DCompletion()
-  return "d\<C-x>\<C-i>"
+  return "d\<C-x>\<C-n>"
 endfunc
 func ECompletion()
   return "e\<C-x>\<C-o>"
 endfunc
 func FCompletion()
-  return "f\<C-x>\<C-i>"
+  return "f\<C-x>\<C-n>"
 endfunc
 func GCompletion()
-  return "g\<C-x>\<C-i>"
+  return "g\<C-x>\<C-n>"
 endfunc
 func HCompletion()
-  return "h\<C-x>\<C-i>"
+  return "h\<C-x>\<C-n>"
 endfunc
 func ICompletion()
   return "i\<C-x>\<C-o>"
 endfunc
 func JCompletion()
-  return "j\<C-x>\<C-i>"
+  return "j\<C-x>\<C-n>"
 endfunc
 func KCompletion()
-  return "k\<C-x>\<C-i>"
+  return "k\<C-x>\<C-n>"
 endfunc
 func LCompletion()
-  return "l\<C-x>\<C-i>"
+  return "l\<C-x>\<C-n>"
 endfunc
 func MCompletion()
-  return "m\<C-x>\<C-i>"
+  return "m\<C-x>\<C-n>"
 endfunc
 func NCompletion()
-  return "n\<C-x>\<C-i>"
+  return "n\<C-x>\<C-n>"
 endfunc
 func OCompletion()
   return "o\<C-x>\<C-o>"
 endfunc
 func PCompletion()
-  return "p\<C-x>\<C-i>"
+  return "p\<C-x>\<C-n>"
 endfunc
 func QCompletion()
-  return "q\<C-x>\<C-i>"
+  return "q\<C-x>\<C-n>"
 endfunc
 func RCompletion()
-  return "r\<C-x>\<C-i>"
+  return "r\<C-x>\<C-n>"
 endfunc
 func SCompletion()
-  return "s\<C-x>\<C-i>"
+  return "s\<C-x>\<C-n>"
 endfunc
 func TCompletion()
-  return "t\<C-x>\<C-i>"
+  return "t\<C-x>\<C-n>"
 endfunc
 func UCompletion()
   return "u\<C-x>\<C-o>"
 endfunc
 func VCompletion()
-  return "v\<C-x>\<C-i>"
+  return "v\<C-x>\<C-n>"
 endfunc
 func WCompletion()
-  return "w\<C-x>\<C-i>"
+  return "w\<C-x>\<C-n>"
 endfunc
 func XCompletion()
-  return "x\<C-x>\<C-i>"
+  return "x\<C-x>\<C-n>"
 endfunc
 func YCompletion()
-  return "y\<C-x>\<C-i>"
+  return "y\<C-x>\<C-n>"
 endfunc
 func ZCompletion()
-  return "z\<C-x>\<C-i>"
+  return "z\<C-x>\<C-n>"
 endfunc
 "TERMINA COMPLETADO DEL ABCEDARIO"
 func SpaceComplete()
@@ -347,6 +351,13 @@ func NormalComplete()
 endfunc
 func Normal2Complete()
   return "\<C-x>\<C-n>"
+endfunc
+func SelectOption()
+  return "\<C-y>"
+endfunc
+
+func SaveInsert()
+  return "\<esc>\:w\<CR>"
 endfunc
 
 func LineComplete()
@@ -404,7 +415,7 @@ nmap <leader>nb :-1r~/.nodeSnips/serverDb<CR>
 nmap <leader>rc :-1r~/.nodeSnips/reactComponent<CR>7jw<space>s
 nmap <leader>ra :-1r~/.nodeSnips/reactApp<CR>
 nmap <leader>re :-1r~/.nodeSnips/Effect<CR>
-nmap <leader>rs :-1r~/.nodeSnips/States<CR>
+nmap <leader>rs :-1r~/.nodeSnips/States<CR>wwce
 nmap <leader>rf :r! cat ~/.nodeSnips/Function<CR>2kfds
 nmap <leader>e :e ./
 "media queries
