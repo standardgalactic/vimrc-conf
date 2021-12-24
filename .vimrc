@@ -101,8 +101,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'itchyny/lightline.vim'
 Plug 'mattn/emmet-vim'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'morhetz/gruvbox'
+Plug 'Yggdroot/indentLine'
 call plug#end()
-"Plug 'morhetz/gruvbox'
 
 "Plug 'leafgarland/typescript-vim'
 "Plug 'scrooloose/nerdcommenter'
@@ -114,12 +115,11 @@ call plug#end()
 
 
 "color del tema
-colorscheme desert
+colorscheme gruvbox
 
-"set background=dark
-"if executable('rg')
-"  let g:rg_derive_root='true'
-"endif
+if executable('rg')
+  let g:rg_derive_root='true'
+endif
 "set del espacioo como 'combo de habilidades'
 let mapleader =" "
 "mapeo del tab nueva tab
@@ -233,6 +233,9 @@ inoremap <expr> ;n NormalComplete()
 inoremap <expr> ;j Normal2Complete() 
 inoremap <expr> ;a SelectOption()
 inoremap <expr> ;w SaveInsert()
+inoremap <expr> ;q Quit()
+inoremap <expr>  hh Retun()
+
 "completado del abecedario"
 inoremap <expr> a ACompletion() 
 inoremap <expr> b BCompletion() 
@@ -360,6 +363,15 @@ func SaveInsert()
   return "\<esc>\:w\<CR>"
 endfunc
 
+func  Quit()
+  return "\<esc>"
+endfunc
+func  Retun()
+  return "\<C-h>"
+endfunc
+
+
+
 func LineComplete()
   return "\<C-x>\<C-l>"
 endfunc
@@ -412,7 +424,7 @@ nmap <leader>ni :-1r~/.nodeSnips/index<CR>
 nmap <leader>nc :-1r~/.nodeSnips/collation<CR>
 nmap <leader>nb :-1r~/.nodeSnips/serverDb<CR>
 "snipets react
-nmap <leader>rc :-1r~/.nodeSnips/reactComponent<CR>7jw<space>s
+nmap <leader>rc :-1r~/.nodeSnips/reactComponent<CR>9jw<space>s
 nmap <leader>ra :-1r~/.nodeSnips/reactApp<CR>
 nmap <leader>re :-1r~/.nodeSnips/Effect<CR>
 nmap <leader>rs :-1r~/.nodeSnips/States<CR>wwce
