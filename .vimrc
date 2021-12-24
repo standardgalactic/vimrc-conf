@@ -60,7 +60,7 @@ let g:lightline = {
       \'gitbranch':'fugitive#head',
       \'readonly': 'LightlineReadonly',
       \},
-      \'colorscheme': 'light',
+      \'colorscheme': 'one',
       \'subseparator':{
       \'left':'',
       \'right':''
@@ -71,7 +71,6 @@ function! LightlineReadonly()
   return &readonly && &filetype !=# 'help' ? 'RO' : ''
 endfunction
 "color del downline schme
-
 "texto
 syntax on
 "interface
@@ -95,15 +94,16 @@ nnoremap <Right> <NOP>
 nnoremap <Up> <NOP>
 nnoremap <Down> <NOP>
 
-"let g:coc_disable_startup_warning = 1
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+
 call plug#begin('~/.vim/plugged')
 Plug 'itchyny/lightline.vim'
 Plug 'mattn/emmet-vim'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'morhetz/gruvbox'
+Plug 'Yggdroot/indentLine'
+Plug 'mhinz/vim-signify'
 call plug#end()
-"Plug 'morhetz/gruvbox'
-
+"Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 "Plug 'leafgarland/typescript-vim'
 "Plug 'scrooloose/nerdcommenter'
 "Plug 'scrooloose/nerdtree'
@@ -112,14 +112,14 @@ call plug#end()
 "Plug 'mgechev/vim-jsx'
 "Plug 'vim-scripts/CSS-one-line--multi-line-folding'
 
-
 "color del tema
-colorscheme desert
+colorscheme gruvbox
+set background=dark
 
-"set background=dark
-"if executable('rg')
-"  let g:rg_derive_root='true'
-"endif
+if executable('rg')
+  let g:rg_derive_root='true'
+endif
+
 "set del espacioo como 'combo de habilidades'
 let mapleader =" "
 "mapeo del tab nueva tab
@@ -147,14 +147,14 @@ nnorem	<leader>l :wincmd l<CR>
 nnoremap <leader>> 10<C-w>>
 nnoremap <leader>< 15<C-w><
 "saltar  hasta abajo
-nnoremap <leader>a G<CR>
-vnoremap <leader>aa G=<CR>
+nnoremap <leader>a G""
 "nnoremap <leader>au :set omnifunc=javascriptcomplete#CompleteJS<CR>
 "guardado
 nnoremap<leader>w :w<CR>
 nnoremap<leader>q :q<CR>
 "buscar y reemplazar
-nnoremap <Leader>s  :%s/\<<C-r><C-w>\>/
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
+nnoremap <Leader>sf  :find 
 nnoremap <Leader>ss :saveas 
 "abrir archivo
 "comandos git/ comandos globales
@@ -164,9 +164,12 @@ nnoremap <Leader>ga :! git add .<CR>
 nnoremap <Leader>gp :! git push -u origin<CR>
 
 "Tags
-nnoremap <Leader>mktag :! ctags -R *.*<CR>
-nnoremap <Leader>maketag :! ctags -R *.*<CR>
-set tags=./tags,tags;
+noremap <leader>gd mA gd 3w gf ggn
+
+"indentar
+nnoremap <leader>ind ma gg v G = `a 
+vnoremap <leader>aa ma gg vG= 
+
 
 nmap <silent><F1> :silent e ~/.nodeSnips/<CR> 
 " vimrc
@@ -186,9 +189,9 @@ nmap <leader>p :r! cat /tmp/vitmp<CR>
 
 "lee y pega el documento Console con lo que imprime un console log
 nmap <leader>c :r! cat ~/.nodeSnips/Console<CR>fds
-"folding
 "clearconsole
 nmap<leader>zl :! clear<CR> 
+"folding
 nmap<silent> <leader>z{	   :silent normal f{v%=f{v%zf<CR> 
 nmap<silent> <leader>{	   :silent normal f{v%=v%zf<CR> 
 nmap<silent> <leader>z[	   :silent normal f[v%=f[v%zf<CR>
@@ -201,7 +204,7 @@ nmap<silent> <leader><Tab> :w<CR><C-^>
 
 "buscar un texto dento de los archivos de la carpeta
 nmap <leader>f :! grep -Ril "" ./
-nmap <leader>ff :g/foo/#
+nmap <leader>ff :g/\<<C-r><C-w>\>/#
 
 "directory tree
 let g:netrw_banner=0	      "disables banner"
@@ -213,6 +216,7 @@ set complete +=kspell	"abreviacion cpt
 set cole =2 "conseal level
 set cocu =nc "conseal cursor
 set cot=menu,menuone,longest,preview,noinsert,noselect "completeopt
+
 "GLOBAL COMPLETIONS"
 inoremap <expr> <space> SpaceComplete()
 inoremap <expr> . DotComplete()
@@ -233,6 +237,8 @@ inoremap <expr> ;n NormalComplete()
 inoremap <expr> ;j Normal2Complete() 
 inoremap <expr> ;a SelectOption()
 inoremap <expr> ;w SaveInsert()
+inoremap <expr> ;q Quit()
+inoremap <expr> hh Return() 
 "completado del abecedario"
 inoremap <expr> a ACompletion() 
 inoremap <expr> b BCompletion() 
@@ -346,6 +352,8 @@ func FileCompletion()
   return "\<C-y>\<C-x>\<C-f>"
 endfunc
 
+
+
 func NormalComplete()
   return "\<C-n>"
 endfunc
@@ -358,6 +366,14 @@ endfunc
 
 func SaveInsert()
   return "\<esc>\:w\<CR>"
+endfunc
+
+func Quit()
+  return "\<esc>"
+endfunc
+
+func Return()
+  return "\<C-h>"
 endfunc
 
 func LineComplete()
@@ -373,123 +389,56 @@ func LanguajeComplete()
 endfunc
 
 func DotComplete()
-  return ".\<C-X>\<C-o>"
+  return ".\<C-x>\<C-o>"
 endfunc
 
 func DashComplete()
-  return "-\<C-X>\<C-i>"
+  return "-\<C-x>\<C-i>"
 endfunc
 
 func BarComplete()
-  return "/\<C-X>\<C-f>"
+  return "/\<C-x>\<C-f>"
 endfunc
 
 func BracketComplete()
-  return "()\<C-O>i\<C-X>\<C-O>"
+  return "()\<esc>$F(a\<C-X>\<C-O>"
 endfunc
 
 funct SquareBracketComplete()
-  return "<>\<C-O>i\<C-X>\<C-I>"
+  return "<>\<esc>$F<a\<C-X>\<C-O>"
 endfunc
 
 func KeyComplete()
-  return "{}\<C-O>i\<C-X>\<C-O>"
+  return "{}\<esc>$F{a\<C-X>\<C-O>"
 endfunc
-
 func SquareKeyComplete()
-  return "[]\<C-o>i\<C-X>\<C-O>"
+  return "[]\<esc>\$F[a\<C-X>\<C-O>"
 endfunc
 func SimpleQuote()
-  return "''\<C-o>i"
+  return "''\<C-o>F\'"
 endfunc
 
 func DoubleQuote()
-  return "\"\"\<C-o>i"
+  return "\"\"\<C-o>F\""
 endfunc
 
+
+
+
 "snipets node
-nmap <leader>ni :-1r~/.nodeSnips/index<CR>
-nmap <leader>nc :-1r~/.nodeSnips/collation<CR>
-nmap <leader>nb :-1r~/.nodeSnips/serverDb<CR>
+nmap <leader>ni	     :r! cat ~/.nodeSnips/index<CR>
+nmap <leader>nc      :r! cat ~/.nodeSnips/collation<CR>
+nmap <leader>nb      :r! cat ~/.nodeSnips/serverDb<CR>
 "snipets react
-nmap <leader>rc :-1r~/.nodeSnips/reactComponent<CR>7jw<space>s
-nmap <leader>ra :-1r~/.nodeSnips/reactApp<CR>
-nmap <leader>re :-1r~/.nodeSnips/Effect<CR>
-nmap <leader>rs :-1r~/.nodeSnips/States<CR>wwce
-nmap <leader>rf :r! cat ~/.nodeSnips/Function<CR>2kfds
+nmap <leader>rc	     :r! cat ~/.nodeSnips/reactComponent<CR>9jw<space>s
+nmap <leader>re      :r! cat ~/.nodeSnips/Effect<CR>
+nmap <leader>rs      :r! cat ~/.nodeSnips/States<CR>wwce
+nmap <leader>rf      :r! cat ~/.nodeSnips/Function<CR>2kfds
+nmap <leader>ra      :r! cat ~/.nodeSnips/ArrowFunction<CR>2kJbf{o
+nmap <leader>rae     :r! cat ~/.nodeSnips/ArrowFunctionEvent<CR>2kJbf{o
 nmap <leader>e :e ./
 "media queries
-nmap <leader>mq	      :-1r ~/.workSnips/css/media-queries<CR>
-"snipets html
-nmap <leader>html     :-1r ~/.workSnips/html/boiler<CR>4jfccw
-nmap <leader>hmc      :-1r ~/.workSnips/html/Container<CR>
-nmap <leader>hm	      :-1r ~/.workSnips/html/MainTitle<CR>
-nmap <leader>hc	      :-1r ~/.workSnips/html/card<CR>
-nmap <leader>htemp    :-1r ~/.workSnips/html/template<CR>
-"snipts css
-nmap <leader>cmc :-1r ~/.workSnips/css/Container<CR>
-nmap <leader>css :-1r ~/.workSnips/css/Boiler<CR>
-nmap <leader>cc  :-1r ~/.workSnips/css/card<CR>
-nmap <leader>ccl :-1r ~/.workSnips/css/card-lf<CR>
-nmap <leader>ccr :-1r ~/.workSnips/css/card-rg<CR>
-nmap <leader>cmt :-1r ~/.workSnips/css/MainTitle<CR>
-nmap <leader>cbi :-1r ~/.workSnips/css/background-image<CR>
-nmap <leader>csb :-1r ~/.workSnips/css/border<CR>
+nmap <leader>mq	      :r! cat ~/.workSnips/css/media-queries<CR>
 
 "Line-jump
-nmap <leader>\ A<CR><ESC>
-"Auto change directory"
-set autochdir
-"set verbose=9
-"scripts auto ejecutables 
-autocmd CompleteDone * if !pumvisible() | pclose | endif
-"cambiar de directorio al entrar a uh buff
-
-"Scripts por grupos
-augroup JavascriptFiles
-  autocmd!
-  autocmd BufRead *.javascript set filetype=javascript
-  autocmd BufRead *.javascript lcd %:p:h
-  autocmd Filetype javascript setlocal omnifunc=javascriptcomplete#CompleteJS 
-augroup end
-
-augroup HtmlFiles
-  autocmd!
-  autocmd BufRead *.html set filetype=html
-  autocmd Filetype html setlocal omnifunc=htmlcomplete#CompleteHTML
-  autocmd BufRead *.html lcd %:p:h
-augroup end
-
-augroup CssFiles
-  autocmd!
-  autocmd BufRead *.css set filetype=css
-  autocmd Filetype css setlocal omnifunc=csscomplete#CompleteCSS
-  autocmd BufRead *.css lcd %:p:h
-augroup end
-
-"augroup NetwrBuffer
-"  autocmd!
-"  autocmd BufLeave  netrw bw .<C-R>
-"augroup end
-
-augroup EnteringOnVim 
-  autocmd!
-  autocmd VimEnter * browse oldfiles "call the function breowseoldfiles
-augroup end
-
-"augroup MakingTabs
-"  autocmd!
-"  autocmd TabNew * Lexplore "opens toggle left men
-"  autocmd TabNew * vertical resize 15 "resizes the window 
-"  autocmd TabNew *  wincmd l "jump to left side
-"augroup end
-
-
-augroup remember_folds
-  autocmd!
-  autocmd BufWinLeave *.* mkview!
-  autocmd BufWinEnter *.* silent loadview 
-augroup END
-
-"autocmd VimEnter * split 5
-"utocmd VimEnter *  wincmd k<CR>
+nmap <leader>/ A<CR><ESC>
