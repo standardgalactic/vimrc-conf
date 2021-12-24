@@ -4,6 +4,8 @@ import React from 'react';
 //import de componentes
 
 //estilos
+//Elaboro: www.github.com/includeovalle
+//Fecha: dd/mm/aa
 
 const da = ()=>{
   return(
