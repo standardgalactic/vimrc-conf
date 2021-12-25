@@ -101,7 +101,11 @@ Plug 'itchyny/lightline.vim'
 Plug 'mattn/emmet-vim'
 Plug 'morhetz/gruvbox'
 Plug 'Yggdroot/indentLine'
-Plug 'mhinz/vim-signify'
+if has('nvim') || has('patch-8.0.902')
+  Plug 'mhinz/vim-signify'
+else
+  Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
+endif
 call plug#end()
 "Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 "Plug 'leafgarland/typescript-vim'
@@ -164,11 +168,10 @@ nnoremap <Leader>ga :! git add .<CR>
 nnoremap <Leader>gp :! git push -u origin<CR>
 
 "Tags
-noremap <leader>gd mA gd 3w gf ggn
+noremap <leader>gd mA gd 4w gf ggn
 
 "indentar
-nnoremap <leader>ind ma gg v G = `a 
-vnoremap <leader>aa ma gg vG= 
+nnoremap <leader>ind ma gg v G= `a 
 
 
 nmap <silent><F1> :silent e ~/.nodeSnips/<CR> 
@@ -434,6 +437,7 @@ nmap <leader>rc	     :r! cat ~/.nodeSnips/reactComponent<CR>9jw<space>s
 nmap <leader>re      :r! cat ~/.nodeSnips/Effect<CR>
 nmap <leader>rs      :r! cat ~/.nodeSnips/States<CR>wwce
 nmap <leader>rf      :r! cat ~/.nodeSnips/Function<CR>2kfds
+nmap <leader>rfe     :r! cat ~/.nodeSnips/FunctionEvent<CR>2kfx<space>s
 nmap <leader>ra      :r! cat ~/.nodeSnips/ArrowFunction<CR>2kJbf{o
 nmap <leader>rae     :r! cat ~/.nodeSnips/ArrowFunctionEvent<CR>2kJbf{o
 nmap <leader>e :e ./
@@ -441,4 +445,59 @@ nmap <leader>e :e ./
 nmap <leader>mq	      :r! cat ~/.workSnips/css/media-queries<CR>
 
 "Line-jump
-nmap <leader>/ A<CR><ESC>
+nmap <leader>\ A<CR><ESC>
+"Auto change directory"
+set autochdir
+"set verbose=9
+"scripts auto ejecutables 
+autocmd CompleteDone * if !pumvisible() | pclose | endif
+"cambiar de directorio al entrar a uh buff
+
+"Scripts por grupos
+augroup JavascriptFiles
+  autocmd!
+  autocmd BufRead *.javascript set filetype=javascript
+  autocmd BufRead *.javascript lcd %:p:h
+  autocmd Filetype javascript setlocal omnifunc=javascriptcomplete#CompleteJS 
+augroup end
+
+augroup HtmlFiles
+  autocmd!
+  autocmd BufRead *.html set filetype=html
+  autocmd Filetype html setlocal omnifunc=htmlcomplete#CompleteHTML
+  autocmd BufRead *.html lcd %:p:h
+augroup end
+
+augroup CssFiles
+  autocmd!
+  autocmd BufRead *.css set filetype=css
+  autocmd Filetype css setlocal omnifunc=csscomplete#CompleteCSS
+  autocmd BufRead *.css lcd %:p:h
+augroup end
+
+"augroup NetwrBuffer
+"  autocmd!
+"  autocmd BufLeave  netrw bw .<C-R>
+"augroup end
+
+augroup EnteringOnVim 
+  autocmd!
+  autocmd VimEnter * browse oldfiles "call the function breowseoldfiles
+augroup end
+
+"augroup MakingTabs
+"  autocmd!
+"  autocmd TabNew * Lexplore "opens toggle left men
+"  autocmd TabNew * vertical resize 15 "resizes the window 
+"  autocmd TabNew *  wincmd l "jump to left side
+"augroup end
+
+
+augroup remember_folds
+  autocmd!
+  autocmd BufWinLeave *.* mkview!
+  autocmd BufWinEnter *.* silent loadview 
+augroup END
+
+"autocmd VimEnter * split 5
+"utocmd VimEnter *  wincmd k<CR>
