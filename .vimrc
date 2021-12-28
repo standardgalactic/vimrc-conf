@@ -2,6 +2,8 @@ set nocompatible
 set path +=**
 filetype plugin on
 set wildmenu
+"wig = wildignore
+set wig +=**/node_modules/** 
 "set wildchar=1  "numero de chars para que wild se active
 set encoding=utf-8
 "Pum menu"
@@ -14,7 +16,9 @@ set fillchars =vert:▓,stlnc:░,fold:•,diff:◈,stl:_
 echo "React?!!!"
 autocmd VimEnter * echo '¿Comanzamos?'
 
+"busqueda en tiempo real de texto
 set hlsearch
+set incsearch 
 "set ignorecase
 set autoindent
 "set noshowmode
@@ -151,7 +155,7 @@ nnorem	<leader>l :wincmd l<CR>
 nnoremap <leader>> 10<C-w>>
 nnoremap <leader>< 15<C-w><
 "saltar  hasta abajo
-nnoremap <leader>a G""
+nnoremap <leader>a G
 "nnoremap <leader>au :set omnifunc=javascriptcomplete#CompleteJS<CR>
 "guardado
 nnoremap<leader>w :w<CR>
@@ -355,8 +359,6 @@ func FileCompletion()
   return "\<C-y>\<C-x>\<C-f>"
 endfunc
 
-
-
 func NormalComplete()
   return "\<C-n>"
 endfunc
@@ -417,35 +419,46 @@ endfunc
 func SquareKeyComplete()
   return "[]\<esc>\$F[a\<C-X>\<C-O>"
 endfunc
+
 func SimpleQuote()
   return "''\<C-o>F\'"
 endfunc
 
+
 func DoubleQuote()
-  return "\"\"\<C-o>F\""
+  return "\"\"\<C-o>$\<C-o>h"
 endfunc
-
-
-
 
 "snipets node
 nmap <leader>ni	     :r! cat ~/.nodeSnips/index<CR>
 nmap <leader>nc      :r! cat ~/.nodeSnips/collation<CR>
 nmap <leader>nb      :r! cat ~/.nodeSnips/serverDb<CR>
-"snipets react
+"snipets react{
 nmap <leader>rc	     :r! cat ~/.nodeSnips/reactComponent<CR>9jw<space>s
 nmap <leader>re      :r! cat ~/.nodeSnips/Effect<CR>
 nmap <leader>rs      :r! cat ~/.nodeSnips/States<CR>wwce
-nmap <leader>rf      :r! cat ~/.nodeSnips/Function<CR>2kfds
+nmap <leader>rf      :r! cat ~/.nodeSnips/Function<CR>2kfx<space>s
 nmap <leader>rfe     :r! cat ~/.nodeSnips/FunctionEvent<CR>2kfx<space>s
 nmap <leader>ra      :r! cat ~/.nodeSnips/ArrowFunction<CR>2kJbf{o
 nmap <leader>rae     :r! cat ~/.nodeSnips/ArrowFunctionEvent<CR>2kJbf{o
+nmap <leader>for     :r! cat ~/.nodeSnips/For<CR>2kfx<space>s
+nmap <leader>if      :r! cat ~/.nodeSnips/If<CR>3ko
+nmap <leader>btn     :r! cat ~/.nodeSnips/Button<CR>/Fecha<CR>
+nmap <leader>lay     :r! cat ~/.nodeSnips/Layout<CR>
 nmap <leader>e :e ./
 "media queries
 nmap <leader>mq	      :r! cat ~/.workSnips/css/media-queries<CR>
+"}
 
 "Line-jump
-nmap <leader>\ A<CR><ESC>
+nmap <leader>/ A<CR><ESC>
+"File replace several files
+"Find
+nmap <leader>gf :vimgrep /\<<C-r><C-w>\>/gj *.js<CR>
+"View
+nmap <leader>gv :cl<CR>
+"Replace
+nmap  <leader>gr :cfdo %s/\<<C-r><C-w>\>/ /g | update 
 "Auto change directory"
 set autochdir
 "set verbose=9
@@ -485,12 +498,12 @@ augroup EnteringOnVim
   autocmd VimEnter * browse oldfiles "call the function breowseoldfiles
 augroup end
 
-"augroup MakingTabs
-"  autocmd!
-"  autocmd TabNew * Lexplore "opens toggle left men
-"  autocmd TabNew * vertical resize 15 "resizes the window 
-"  autocmd TabNew *  wincmd l "jump to left side
-"augroup end
+augroup MakingTabs
+  autocmd!
+  autocmd TabNew * Lexplore "opens toggle left men
+  autocmd TabNew * vertical resize 15 "resizes the window 
+  autocmd TabNew *  wincmd l "jump to left side
+augroup end
 
 
 augroup remember_folds
