@@ -436,7 +436,7 @@ nmap <leader>nb      :r! cat ~/.nodeSnips/serverDb<CR>
 "snipets react{
 nmap <leader>rc	     :r! cat ~/.nodeSnips/reactComponent<CR>9jw<space>s
 nmap <leader>re      :r! cat ~/.nodeSnips/Effect<CR>
-nmap <leader>rs      :r! cat ~/.nodeSnips/States<CR>wwce
+nmap <leader>rs      :r! cat ~/.nodeSnips/States<CR>k0wfcce
 nmap <leader>rf      :r! cat ~/.nodeSnips/Function<CR>2kfx<space>s
 nmap <leader>rfe     :r! cat ~/.nodeSnips/FunctionEvent<CR>2kfx<space>s
 nmap <leader>ra      :r! cat ~/.nodeSnips/ArrowFunction<CR>2kJbf{o
@@ -445,6 +445,8 @@ nmap <leader>for     :r! cat ~/.nodeSnips/For<CR>2kfx<space>s
 nmap <leader>if      :r! cat ~/.nodeSnips/If<CR>3ko
 nmap <leader>btn     :r! cat ~/.nodeSnips/Button<CR>/Fecha<CR>
 nmap <leader>lay     :r! cat ~/.nodeSnips/Layout<CR>
+nmap <leader>flex    :r! cat ~/.nodeSnips/Flexbox<CR>/XFA<CR><space>s
+
 nmap <leader>e :e ./
 "media queries
 nmap <leader>mq	      :r! cat ~/.workSnips/css/media-queries<CR>
