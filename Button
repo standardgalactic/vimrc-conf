@@ -1,0 +1,21 @@
+//import de imagenes
+
+//import de componentes
+import {ButtonSt} from '../../styles/Button.js'
+
+//estilos
+//Elaboro: www.github.com/includeovalle
+//Fecha:14/12/2021
+
+const Button = (props)=>{
+  return(
+    <ButtonSt
+    className={props.className}
+    onClick = {props.onClick}
+    >
+    {props.children}
+    </ButtonSt>
+  )
+}
+export default Button;
+

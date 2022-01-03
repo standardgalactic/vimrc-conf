@@ -1,0 +1,36 @@
+//resources
+import Head from 'next/head'
+
+//import de componentes
+
+//estilos
+import {Children} from '../../styles/Children.js'
+
+const Layout = ({title,metaTags, children})=>{
+  return(
+    <>
+    <Head>
+    <title>{title}</title>
+    <meta name="description" content={metaTags}/>
+    </Head>
+
+    <Children>
+    {children}
+    </Children>
+    </>
+  )
+}
+export default Layout;
+
+export const RegisterLayout = ({title,metaTags, children})=>{
+  return(
+    <>
+    <Head>
+    <title>{title}</title>
+    <meta name="description" content={metaTags}/>
+    </Head>
+    {children}
+    </>
+  )
+}
+
