@@ -1,0 +1,10 @@
+import styled from 'styled-components'
+import {color} from './themes'
+
+export const XFA = styled.div`
+position:relative;
+top:0;
+left:0;
+display:flex;
+justify-content: center;
+`
