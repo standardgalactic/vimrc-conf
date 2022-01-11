@@ -237,6 +237,7 @@ inoremap <expr> ' SimpleQuote()
 inoremap <expr>  " DoubleQuote()
 "DIVERSOS MODOS DE COMPLETADO DE VIM"
 inoremap <expr> ;f FileCompletion()
+
 inoremap <expr> ;i CurrentFiles()
 inoremap <expr> ;l LineComplete()
 inoremap <expr> ;o LanguajeComplete() 
@@ -245,6 +246,8 @@ inoremap <expr> ;j Normal2Complete()
 inoremap <expr> ;a SelectOption()
 inoremap <expr> ;w SaveInsert()
 inoremap <expr> ;q Quit()
+inoremap <expr> ;; Semicolom()
+inoremap <expr> ;c Comment() 
 inoremap <expr> hh Return() 
 "completado del abecedario"
 inoremap <expr> a ACompletion() 
@@ -377,6 +380,14 @@ func Quit()
   return "\<esc>"
 endfunc
 
+func Semicolom()
+  return "\<esc>A;"
+endfunc
+
+func Comment()
+  return "\<esc>I//"
+endfunc
+
 func Return()
   return "\<C-h>"
 endfunc
@@ -406,27 +417,27 @@ func BarComplete()
 endfunc
 
 func BracketComplete()
-  return "()\<esc>$F(a\<C-X>\<C-O>"
+  return "()\<esc>i"
 endfunc
 
 funct SquareBracketComplete()
-  return "<>\<esc>$F<a\<C-X>\<C-O>"
+  return "<>\<esc>i"
 endfunc
 
 func KeyComplete()
-  return "{}\<esc>$F{a\<C-X>\<C-O>"
+  return "{}\<esc>i"
 endfunc
 func SquareKeyComplete()
-  return "[]\<esc>\$F[a\<C-X>\<C-O>"
+  return "[]\<esc>i"
 endfunc
 
 func SimpleQuote()
-  return "''\<C-o>F\'"
+  return "''\<esc>i"
 endfunc
 
 
 func DoubleQuote()
-  return "\"\"\<C-o>$\<C-o>h"
+  return "\"\"\<esc>i"
 endfunc
 
 "snipets node
@@ -434,9 +445,9 @@ nmap <leader>ni	     :r! cat ~/.nodeSnips/index<CR>
 nmap <leader>nc      :r! cat ~/.nodeSnips/collation<CR>
 nmap <leader>nb      :r! cat ~/.nodeSnips/serverDb<CR>
 "snipets react{
-nmap <leader>rc	     :r! cat ~/.nodeSnips/reactComponent<CR>9jw<space>s
+nmap <leader>rc	     :r! cat ~/.nodeSnips/reactComponent<CR>/da<CR><space>s
 nmap <leader>re      :r! cat ~/.nodeSnips/Effect<CR>
-nmap <leader>rs      :r! cat ~/.nodeSnips/States<CR>k0wfcce
+nmap <leader>rs      :r! cat ~/.nodeSnips/States<CR>wwce
 nmap <leader>rf      :r! cat ~/.nodeSnips/Function<CR>2kfx<space>s
 nmap <leader>rfe     :r! cat ~/.nodeSnips/FunctionEvent<CR>2kfx<space>s
 nmap <leader>ra      :r! cat ~/.nodeSnips/ArrowFunction<CR>2kJbf{o
@@ -445,8 +456,6 @@ nmap <leader>for     :r! cat ~/.nodeSnips/For<CR>2kfx<space>s
 nmap <leader>if      :r! cat ~/.nodeSnips/If<CR>3ko
 nmap <leader>btn     :r! cat ~/.nodeSnips/Button<CR>/Fecha<CR>
 nmap <leader>lay     :r! cat ~/.nodeSnips/Layout<CR>
-nmap <leader>flex    :r! cat ~/.nodeSnips/Flexbox<CR>/XFA<CR><space>s
-
 nmap <leader>e :e ./
 "media queries
 nmap <leader>mq	      :r! cat ~/.workSnips/css/media-queries<CR>
