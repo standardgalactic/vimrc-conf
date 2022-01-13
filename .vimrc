@@ -455,6 +455,7 @@ nmap <leader>for     :r! cat ~/.nodeSnips/For<CR>2kfx<space>s
 nmap <leader>if      :r! cat ~/.nodeSnips/If<CR>3ko
 nmap <leader>btn     :r! cat ~/.nodeSnips/Button<CR>/Fecha<CR>
 nmap <leader>lay     :r! cat ~/.nodeSnips/Layout<CR>
+nmap <leader>flex    :r! cat ~/.nodeSnips/Flexbox<CR>/XFA<CR><space>s
 nmap <leader>e :e ./
 "media queries
 nmap <leader>mq	      :r! cat ~/.workSnips/css/media-queries<CR>
