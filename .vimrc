@@ -247,7 +247,6 @@ inoremap <expr> ;a SelectOption()
 inoremap <expr> ;w SaveInsert()
 inoremap <expr> ;q Quit()
 inoremap <expr> ;; Semicolom()
-inoremap <expr> ;c Comment() 
 inoremap <expr> hh Return() 
 "completado del abecedario"
 inoremap <expr> a ACompletion() 
@@ -447,9 +446,9 @@ nmap <leader>nb      :r! cat ~/.nodeSnips/serverDb<CR>
 "snipets react{
 nmap <leader>rc	     :r! cat ~/.nodeSnips/reactComponent<CR>/da<CR><space>s
 nmap <leader>re      :r! cat ~/.nodeSnips/Effect<CR>
-nmap <leader>rs      :r! cat ~/.nodeSnips/States<CR>wwce
-nmap <leader>rf      :r! cat ~/.nodeSnips/Function<CR>2kfx<space>s
-nmap <leader>rfe     :r! cat ~/.nodeSnips/FunctionEvent<CR>2kfx<space>s
+nmap <leader>rs      :r! cat ~/.nodeSnips/States<CR>2kwwfcce
+nmap <leader>rf      :r! cat ~/.nodeSnips/Function<CR>2kff<space>s
+nmap <leader>rfe     :r! cat ~/.nodeSnips/FunctionEvent<CR>2kff<space>s
 nmap <leader>ra      :r! cat ~/.nodeSnips/ArrowFunction<CR>2kJbf{o
 nmap <leader>rae     :r! cat ~/.nodeSnips/ArrowFunctionEvent<CR>2kJbf{o
 nmap <leader>for     :r! cat ~/.nodeSnips/For<CR>2kfx<space>s
@@ -459,7 +458,6 @@ nmap <leader>lay     :r! cat ~/.nodeSnips/Layout<CR>
 nmap <leader>e :e ./
 "media queries
 nmap <leader>mq	      :r! cat ~/.workSnips/css/media-queries<CR>
-"}
 
 "Line-jump
 nmap <leader>/ A<CR><ESC>
@@ -470,7 +468,9 @@ nmap <leader>gf :vimgrep /\<<C-r><C-w>\>/gj *.js<CR>
 nmap <leader>gv :cl<CR>
 "Replace
 nmap  <leader>gr :cfdo %s/\<<C-r><C-w>\>/ /g | update 
+nmap  <leader>; I//<esc>
 "Auto change directory"
+
 set autochdir
 "set verbose=9
 "scripts auto ejecutables 
