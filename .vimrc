@@ -13,7 +13,7 @@ set termencoding=utf-8
 set fillchars =vert:▓,stlnc:░,fold:•,diff:◈,stl:_
 
 "Saludos Vergas
-echo "React?!!!"
+echo "vamos a matarno enla raya"
 autocmd VimEnter * echo '¿Comanzamos?'
 
 "busqueda en tiempo real de texto
@@ -44,7 +44,7 @@ set shiftwidth=2
 set si
 set nolbr
 set sta
-set vsts=3
+"set vsts=3
 " append '>>' to indent
 set showbreak=ᐓᐓᐓ  
 "\'right':['bufnum']
@@ -92,7 +92,9 @@ set undodir=~/.vim/undodir
 set undofile
 
 
+"=========================================================
 "debailitar las flechas
+"=========================================================
 nnoremap <Left> <NOP>
 nnoremap <Right> <NOP>
 nnoremap <Up> <NOP>
@@ -100,7 +102,9 @@ nnoremap <Down> <NOP>
 
 
 
+"=========================================================
 call plug#begin('~/.vim/plugged')
+"=========================================================
 Plug 'itchyny/lightline.vim'
 Plug 'mattn/emmet-vim'
 Plug 'morhetz/gruvbox'
@@ -132,9 +136,11 @@ endif
 let mapleader =" "
 "mapeo del tab nueva tab
 nnoremap <S-t> :tabnew<CR>
+"=========================================================
 "mapeo de pantalla divida
+"=========================================================
 nnoremap <C-y> :Vexplore<CR>
-"mapo del movimiento entre tabs 
+"mapeo del movimiento entre tabs 
 nnoremap <leader>1 1gt
 nnoremap <leader>2 2gt
 nnoremap <leader>3 3gt
@@ -165,24 +171,28 @@ nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 nnoremap <Leader>sf  :find 
 nnoremap <Leader>ss :saveas 
 "abrir archivo
+"=========================================================
 "comandos git/ comandos globales
+"=========================================================
 nnoremap <Leader>gs :! git status<CR>
 nnoremap <Leader>gc :! git commit -a -m''
 nnoremap <Leader>ga :! git add .<CR>
 nnoremap <Leader>gp :! git push -u origin<CR>
 
+"=========================================================
 "Tags
 noremap <leader>gd mA gd 4w gf ggn
+"=========================================================
 
+"=========================================================
 "indentar
 nnoremap <leader>ind ma gg v G= `a 
+"=========================================================
 
 
 nmap <silent><F1> :silent e ~/.nodeSnips/<CR> 
 " vimrc
 nmap <silent> <F2> :silent e ~/.vimrc <CR> 
-"Trabajo
-nmap <silent><F3> :silent e ~/.workSnips/<CR> 
 "list buffers
 nmap <silent><F4> :ls<CR>:b 
 "vim Source
@@ -198,7 +208,15 @@ nmap <leader>p :r! cat /tmp/vitmp<CR>
 nmap <leader>c :r! cat ~/.nodeSnips/Console<CR>fds
 "clearconsole
 nmap<leader>zl :! clear<CR> 
+"=========================================================
 "folding
+"=========================================================
+set fdc=4 "fold colum
+set fcl=all "fold on leve"
+set fdl=2   "fold level"
+set ml	 "modeline"
+
+	
 nmap<silent> <leader>z{	   :silent normal f{v%=f{v%zf<CR> 
 nmap<silent> <leader>{	   :silent normal f{v%=v%zf<CR> 
 nmap<silent> <leader>z[	   :silent normal f[v%=f[v%zf<CR>
@@ -224,8 +242,10 @@ set cole =2 "conseal level
 set cocu =nc "conseal cursor
 set cot=menu,menuone,longest,preview,noinsert,noselect "completeopt
 
+"=========================================================
 "GLOBAL COMPLETIONS"
-inoremap <expr> <space> SpaceComplete()
+"=========================================================
+""inoremap <expr> <space> SpaceComplete()
 inoremap <expr> . DotComplete()
 inoremap <expr> - DashComplete()
 inoremap <expr> / BarComplete()
@@ -235,7 +255,9 @@ inoremap <expr> { KeyComplete()
 inoremap <expr> [ SquareKeyComplete()
 inoremap <expr> ' SimpleQuote()
 inoremap <expr>  " DoubleQuote()
+"=========================================================
 "DIVERSOS MODOS DE COMPLETADO DE VIM"
+"=========================================================
 inoremap <expr> ;f FileCompletion()
 
 inoremap <expr> ;i CurrentFiles()
@@ -244,121 +266,124 @@ inoremap <expr> ;o LanguajeComplete()
 inoremap <expr> ;n NormalComplete() 
 inoremap <expr> ;j Normal2Complete() 
 inoremap <expr> ;a SelectOption()
+inoremap <expr> ;z JumpToEndLineAndEdit()
 inoremap <expr> ;w SaveInsert()
 inoremap <expr> ;q Quit()
 inoremap <expr> ;; Semicolom()
 inoremap <expr> hh Return() 
 "completado del abecedario"
 inoremap <expr> a ACompletion() 
-inoremap <expr> b BCompletion() 
-inoremap <expr> c CCompletion() 
-inoremap <expr> d DCompletion() 
+""inoremap <expr> b BCompletion() 
+""inoremap <expr> c CCompletion() 
+""inoremap <expr> d DCompletion() 
 inoremap <expr> e ECompletion() 
-inoremap <expr> f FCompletion() 
-inoremap <expr> g GCompletion() 
-inoremap <expr> h HCompletion() 
+""inoremap <expr> f FCompletion() 
+""inoremap <expr> g GCompletion() 
+""inoremap <expr> h HCompletion() 
 inoremap <expr> i ICompletion() 
-inoremap <expr> j JCompletion() 
-inoremap <expr> k KCompletion() 
+""inoremap <expr> j JCompletion() 
+""inoremap <expr> k KCompletion() 
 inoremap <expr> l LCompletion() 
-inoremap <expr> m MCompletion() 
-inoremap <expr> n NCompletion() 
+""inoremap <expr> m MCompletion() 
+"inoremap <expr> n NCompletion() 
 inoremap <expr> o OCompletion() 
-inoremap <expr> p PCompletion() 
-inoremap <expr> q QCompletion() 
-inoremap <expr> r RCompletion() 
-inoremap <expr> s SCompletion() 
+""inoremap <expr> p PCompletion() 
+""inoremap <expr> q QCompletion() 
+""inoremap <expr> r RCompletion() 
+""inoremap <expr> s SCompletion() 
 inoremap <expr> t TCompletion() 
 inoremap <expr> u UCompletion() 
-inoremap <expr> v VCompletion() 
-inoremap <expr> w WCompletion() 
-inoremap <expr> x XCompletion() 
-inoremap <expr> y YCompletion() 
-inoremap <expr> z ZCompletion() 
+""inoremap <expr> v VCompletion() 
+""inoremap <expr> w WCompletion() 
+""inoremap <expr> x XCompletion() 
+""inoremap <expr> y YCompletion() 
+""inoremap <expr> z ZCompletion() 
 func ACompletion()
   return "a\<C-x>\<C-o>"
 endfunc
-func BCompletion()
-  return "b\<C-x>\<C-n>"
-endfunc
-func CCompletion()
-  return "c\<C-x>\<C-n>"
-endfunc
-func DCompletion()
-  return "d\<C-x>\<C-n>"
-endfunc
+""func BCompletion()
+""  return "b\<C-x>\<C-n>"
+""endfunc
+""func CCompletion()
+""  return "c\<C-x>\<C-n>"
+""endfunc
+""func DCompletion()
+""  return "d\<C-x>\<C-n>"
+""endfunc
 func ECompletion()
   return "e\<C-x>\<C-o>"
 endfunc
-func FCompletion()
-  return "f\<C-x>\<C-n>"
-endfunc
-func GCompletion()
-  return "g\<C-x>\<C-n>"
-endfunc
-func HCompletion()
-  return "h\<C-x>\<C-n>"
-endfunc
+""func FCompletion()
+""  return "f\<C-x>\<C-n>"
+""endfunc
+""func GCompletion()
+""  return "g\<C-x>\<C-n>"
+""endfunc
+""func HCompletion()
+""  return "h\<C-x>\<C-n>"
+""endfunc
 func ICompletion()
   return "i\<C-x>\<C-o>"
 endfunc
-func JCompletion()
-  return "j\<C-x>\<C-n>"
-endfunc
-func KCompletion()
-  return "k\<C-x>\<C-n>"
-endfunc
+""func JCompletion()
+""  return "j\<C-x>\<C-n>"
+""endfunc
+""func KCompletion()
+""  return "k\<C-x>\<C-n>"
+""endfunc
 func LCompletion()
   return "l\<C-x>\<C-n>"
 endfunc
-func MCompletion()
-  return "m\<C-x>\<C-n>"
-endfunc
-func NCompletion()
-  return "n\<C-x>\<C-n>"
-endfunc
+""func MCompletion()
+""  return "m\<C-x>\<C-n>"
+""endfunc
+""func NCompletion()
+""  return "n\<C-x>\<C-n>"
+""endfunc
 func OCompletion()
   return "o\<C-x>\<C-o>"
 endfunc
-func PCompletion()
-  return "p\<C-x>\<C-n>"
-endfunc
-func QCompletion()
-  return "q\<C-x>\<C-n>"
-endfunc
-func RCompletion()
-  return "r\<C-x>\<C-n>"
-endfunc
-func SCompletion()
-  return "s\<C-x>\<C-n>"
-endfunc
+""func PCompletion()
+""  return "p\<C-x>\<C-n>"
+""endfunc
+""func QCompletion()
+""  return "q\<C-x>\<C-n>"
+""endfunc
+""func RCompletion()
+""  return "r\<C-x>\<C-n>"
+""endfunc
+""func SCompletion()
+""  return "s\<C-x>\<C-n>"
+""endfunc
 func TCompletion()
   return "t\<C-x>\<C-n>"
 endfunc
 func UCompletion()
   return "u\<C-x>\<C-o>"
 endfunc
-func VCompletion()
-  return "v\<C-x>\<C-n>"
-endfunc
-func WCompletion()
-  return "w\<C-x>\<C-n>"
-endfunc
-func XCompletion()
-  return "x\<C-x>\<C-n>"
-endfunc
-func YCompletion()
-  return "y\<C-x>\<C-n>"
-endfunc
-func ZCompletion()
-  return "z\<C-x>\<C-n>"
-endfunc
+""func VCompletion()
+""  return "v\<C-x>\<C-n>"
+""endfunc
+""func WCompletion()
+""  return "w\<C-x>\<C-n>"
+""endfunc
+""func XCompletion()
+""  return "x\<C-x>\<C-n>"
+""endfunc
+""func YCompletion()
+""  return "y\<C-x>\<C-n>"
+""endfunc
+""func ZCompletion()
+""  return "z\<C-x>\<C-n>"
+""endfunc
+"=========================================================
 "TERMINA COMPLETADO DEL ABCEDARIO"
-func SpaceComplete()
-  return "\<space>\<C-x>\<C-l>"
-endfunc
+"=========================================================
+""func SpaceComplete()
+""  return "\<space>\<C-x>\<C-l>"
+""endfunc
 func FileCompletion()
-  return "\<C-y>\<C-x>\<C-f>"
+  return "\<C-x>\<C-f>"
 endfunc
 
 func NormalComplete()
@@ -369,6 +394,9 @@ func Normal2Complete()
 endfunc
 func SelectOption()
   return "\<C-y>"
+endfunc
+func JumpToEndLineAndEdit()
+  return "\<esc>A"
 endfunc
 
 func SaveInsert()
@@ -469,12 +497,18 @@ nmap <leader>gf :vimgrep /\<<C-r><C-w>\>/gj *.js<CR>
 nmap <leader>gv :cl<CR>
 "Replace
 nmap  <leader>gr :cfdo %s/\<<C-r><C-w>\>/ /g | update 
-nmap  <leader>; I//<esc>
-"Auto change directory"
+"comment  normal
+nmap  <leader>; mkI//<esc>`k
+"coment  inssert mode"
+inoremap  <leader>/ <esc>I//<esc>A
 
+
+"Auto change directory"
 set autochdir
 "set verbose=9
+"=========================================================
 "scripts auto ejecutables 
+"=========================================================
 autocmd CompleteDone * if !pumvisible() | pclose | endif
 "cambiar de directorio al entrar a uh buff
 
