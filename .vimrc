@@ -20,7 +20,7 @@ autocmd VimEnter * echo '¿Comanzamos?'
 set hlsearch
 set incsearch 
 "set ignorecase
-set autoindent
+
 "set noshowmode
 set cmdheight=2
 "comando del lightline
@@ -37,13 +37,17 @@ let g:user_emmet_mode='n'
 set breakindent
 "wrap de la lineas
 "set wrap
-set so=8
-set siso=2
-set wm=1 "wrapmargin
-set shiftwidth=2
-set si
-set nolbr
-set sta
+set so=2 "margen interno del renglon"
+set siso=10 "sidescroll"
+set cin "C like indent"
+
+set lisp "indentado smarrth"
+ "set wm=5 wrapmargin
+"set shiftwidth=2
+ "set si smart indent"
+"set autoindent  auto identar"
+set lbr "break de lineas correcto"
+"set sta 
 "set vsts=3
 " append '>>' to indent
 set showbreak=ᐓᐓᐓ  
@@ -215,6 +219,7 @@ set fdc=4 "fold colum
 set fcl=all "fold on leve"
 set fdl=2   "fold level"
 set ml	 "modeline"
+"set fdm=indent	  folding method manual, indent"
 
 	
 nmap<silent> <leader>z{	   :silent normal f{v%=f{v%zf<CR> 
@@ -259,6 +264,7 @@ inoremap <expr>  " DoubleQuote()
 "DIVERSOS MODOS DE COMPLETADO DE VIM"
 "=========================================================
 inoremap <expr> ;f FileCompletion()
+inoremap <expr> <Tab> TabComplete()
 
 inoremap <expr> ;i CurrentFiles()
 inoremap <expr> ;l LineComplete()
@@ -274,7 +280,7 @@ inoremap <expr> hh Return()
 "completado del abecedario"
 inoremap <expr> a ACompletion() 
 ""inoremap <expr> b BCompletion() 
-""inoremap <expr> c CCompletion() 
+inoremap <expr> c CCompletion() 
 ""inoremap <expr> d DCompletion() 
 inoremap <expr> e ECompletion() 
 ""inoremap <expr> f FCompletion() 
@@ -295,7 +301,7 @@ inoremap <expr> t TCompletion()
 inoremap <expr> u UCompletion() 
 ""inoremap <expr> v VCompletion() 
 ""inoremap <expr> w WCompletion() 
-""inoremap <expr> x XCompletion() 
+inoremap <expr> x XCompletion() 
 ""inoremap <expr> y YCompletion() 
 ""inoremap <expr> z ZCompletion() 
 func ACompletion()
@@ -304,9 +310,9 @@ endfunc
 ""func BCompletion()
 ""  return "b\<C-x>\<C-n>"
 ""endfunc
-""func CCompletion()
-""  return "c\<C-x>\<C-n>"
-""endfunc
+func CCompletion()
+  return "c\<C-x>\<C-n>"
+endfunc
 ""func DCompletion()
 ""  return "d\<C-x>\<C-n>"
 ""endfunc
@@ -367,9 +373,9 @@ endfunc
 ""func WCompletion()
 ""  return "w\<C-x>\<C-n>"
 ""endfunc
-""func XCompletion()
-""  return "x\<C-x>\<C-n>"
-""endfunc
+func XCompletion()
+  return "x\<C-x>\<C-n>"
+endfunc
 ""func YCompletion()
 ""  return "y\<C-x>\<C-n>"
 ""endfunc
@@ -386,6 +392,12 @@ func FileCompletion()
   return "\<C-x>\<C-f>"
 endfunc
 
+func TabComplete()
+  if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
+    return "\<Tab>"
+  else
+    return "\<C-N>"
+endfunction
 func NormalComplete()
   return "\<C-n>"
 endfunc
@@ -503,6 +515,7 @@ nmap  <leader>; mkI//<esc>`k
 inoremap  <leader>/ <esc>I//<esc>A
 
 
+"cambiar de directorio al entrar a uh buff
 "Auto change directory"
 set autochdir
 "set verbose=9
@@ -510,7 +523,6 @@ set autochdir
 "scripts auto ejecutables 
 "=========================================================
 autocmd CompleteDone * if !pumvisible() | pclose | endif
-"cambiar de directorio al entrar a uh buff
 
 "Scripts por grupos
 augroup JavascriptFiles
