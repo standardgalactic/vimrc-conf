@@ -1,3 +1,6 @@
+"MACROS"
+let @k='f\r/'
+let @p='bi ";q xepa'
 set nocompatible
 set path +=**
 filetype plugin on
@@ -11,8 +14,15 @@ set ph=7
 scriptencoding utf-8
 set termencoding=utf-8
 set fillchars =vert:▓,stlnc:░,fold:•,diff:◈,stl:_
-
+set clipboard+=unnamedplus
+"=========================================================
+"Mouse
+"=========================================================
+set mouse=n "mouse en normal"
+set mousef "mouse cambio e focus
+"=========================================================
 "Saludos Vergas
+"=========================================================
 echo "vamos a matarno enla raya"
 autocmd VimEnter * echo '¿Comanzamos?'
 
@@ -265,7 +275,7 @@ inoremap <expr>  " DoubleQuote()
 "=========================================================
 inoremap <expr> ;f FileCompletion()
 inoremap <expr> <Tab> TabComplete()
-
+inoremap <expr> <CR> EnterComplete()
 inoremap <expr> ;i CurrentFiles()
 inoremap <expr> ;l LineComplete()
 inoremap <expr> ;o LanguajeComplete() 
@@ -391,6 +401,14 @@ endfunc
 func FileCompletion()
   return "\<C-x>\<C-f>"
 endfunc
+
+func EnterComplete()
+  if pumvisible()
+    return "\<C-y>"
+  else
+    return "\<CR>"
+endfunction
+
 
 func TabComplete()
   if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
