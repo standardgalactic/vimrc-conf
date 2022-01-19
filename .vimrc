@@ -220,6 +220,7 @@ nmap <leader>p :r! cat /tmp/vitmp<CR>
 
 "lee y pega el documento Console con lo que imprime un console log
 nmap <leader>c :r! cat ~/.nodeSnips/Console<CR>fds
+nmap <leader>cp mcggvGy`c
 "clearconsole
 nmap<leader>zl :! clear<CR> 
 "=========================================================
@@ -572,6 +573,9 @@ augroup end
 augroup EnteringOnVim 
   autocmd!
   autocmd VimEnter * browse oldfiles "call the function breowseoldfiles
+  autocmd VimEnter * Lexplore "opens toggle left men
+  autocmd VimEnter * vertical resize 15 "resizes the window 
+  autocmd VimEnter *  wincmd l "jump to left side
 augroup end
 
 augroup MakingTabs
