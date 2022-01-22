@@ -585,6 +585,11 @@ augroup MakingTabs
   autocmd TabNew *  wincmd l "jump to left side
 augroup end
 
+augroup AutosetFiletypeStyledComponents
+	autocmd!
+	autocmd BufNew * if /styled-components<C-R> set fileType=css else ''
+  ""if pumvisible() return "\<C-y>" else return "\<CR>"
+augroup end
 
 augroup remember_folds
   autocmd!
