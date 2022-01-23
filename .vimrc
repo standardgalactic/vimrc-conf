@@ -9,7 +9,7 @@ set wildmenu
 set wig +=**/node_modules/** 
 "set wildchar=1  "numero de chars para que wild se active
 set encoding=utf-8
-"Pum menu"
+"Pumjmenu"
 set ph=7
 scriptencoding utf-8
 set termencoding=utf-8
@@ -100,7 +100,9 @@ set titlelen=100
 "miscelaniuos
 set confirm
 set history=10000
-set viminfo='15
+""set viminfo=6
+set viminfo=!,'10,<900,s1000
+set shada=!,'10,<999,s1000,%30
 set noswapfile
 set undodir=~/.vim/undodir
 set undofile
