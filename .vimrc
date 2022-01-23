@@ -1,7 +1,13 @@
+set nocompatible
+"=========================================================
 "MACROS"
+"=========================================================
 let @k='f\r/'
 let @p='bi ";q xepa'
-set nocompatible
+let @o='bi {;q xepa'
+let @u='bi (;q xepa'
+let @i="bi ';q xepa"
+
 set path +=**
 filetype plugin on
 set wildmenu
@@ -20,11 +26,14 @@ set clipboard+=unnamedplus
 "=========================================================
 set mouse=n "mouse en normal"
 set mousef "mouse cambio e focus
+
+let netrw_mousemaps=1
+
 "=========================================================
 "Saludos Vergas
 "=========================================================
-echo "vamos a matarno enla raya"
-autocmd VimEnter * echo '¿Comanzamos?'
+echo '¿Comanzamos?'
+autocmd VimEnter * echo  "vamos a matarno enla raya"
 
 "busqueda en tiempo real de texto
 set hlsearch
@@ -36,32 +45,34 @@ set cmdheight=2
 "comando del lightline
 set noshowmode "quta el insert text por defecto de vim"
 set ls=1
-set lbr
+set lbr  "line break jump line without insert jump line"
 
 "set statusline=%<%f\ %h%m%r%{kite#statusline()}%=%-14.(%l,%c%V%)\ %P
 set laststatus=2  " always display the status line
 "emmet
 let g:user_emmet_leader_key=','
-let g:user_emmet_mode='n'
-" enable indentation
-set breakindent
-"wrap de la lineas
-"set wrap
-set so=2 "margen interno del renglon"
-set siso=10 "sidescroll"
-set cin "C like indent"
+set nowrap
+set siso=15 "sidescroll"
+set shiftwidth=4  " indenting is 4 spaces
+set autoindent    " turns it on
 
-set lisp "indentado smarrth"
- "set wm=5 wrapmargin
-"set shiftwidth=2
- "set si smart indent"
+
+set cino=J2
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+
+let g:clojure_fuzzy_indent = 1
+let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let']
+let g:clojure_fuzzy_indent_blacklist =  ['-fn$', '\v^with-%(meta|out-str|loading-context)$']
+
 "set autoindent  auto identar"
 set lbr "break de lineas correcto"
 "set sta 
-"set vsts=3
+set varsofttabstop=8,32,8
 " append '>>' to indent
 set showbreak=ᐓᐓᐓ  
-"\'right':['bufnum']
+"
 " \'component': {
 " \'inactive':'inactive',
 " \},
@@ -69,7 +80,7 @@ set showbreak=ᐓᐓᐓ
 let g:lightline = {
       \ 'active':{
       \'left':[['mode','paste'],[], ['relativepath','modified','readonly']],
-      \'right':[['%n'],['filetype','percent', 'lineinfo','gitbranch']]
+      \'right':[['%n'],['filetype','percent', 'lineinfo','gitbranch'],['bufnum']] 
       \},
       \ 'inactive':{
       \'left':[['inactive'], ['relativepath']],
@@ -228,13 +239,13 @@ nmap<leader>zl :! clear<CR>
 "=========================================================
 "folding
 "=========================================================
-set fdc=4 "fold colum
+set fdc=3   "fold colum
 set fcl=all "fold on leve"
 set fdl=2   "fold level"
 set ml	 "modeline"
-"set fdm=indent	  folding method manual, indent"
+set fdm=manual	 " folding method manual, indent"
 
-	
+
 nmap<silent> <leader>z{	   :silent normal f{v%=f{v%zf<CR> 
 nmap<silent> <leader>{	   :silent normal f{v%=v%zf<CR> 
 nmap<silent> <leader>z[	   :silent normal f[v%=f[v%zf<CR>
@@ -410,6 +421,203 @@ func EnterComplete()
     return "\<C-y>"
   else
     return "\<CR>"
+<<<<<<< HEAD
+  endfunction
+
+
+  func TabComplete()
+    if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
+      return "\<Tab>"
+    else
+      return "\<C-N>"
+    endfunction
+    func NormalComplete()
+      return "\<C-n>"
+    endfunc
+    func Normal2Complete()
+      return "\<C-x>\<C-n>"
+    endfunc
+    func SelectOption()
+      return "\<C-y>"
+    endfunc
+    func JumpToEndLineAndEdit()
+      return "\<esc>A"
+    endfunc
+
+    func SaveInsert()
+      return "\<esc>\:w\<CR>"
+    endfunc
+
+    func Quit()
+      return "\<esc>"
+    endfunc
+
+    func Semicolom()
+      return "\<esc>A;"
+    endfunc
+
+    func Comment()
+      return "\<esc>I//"
+    endfunc
+
+    func Return()
+      return "\<C-h>"
+    endfunc
+
+    func LineComplete()
+      return "\<C-x>\<C-l>"
+    endfunc
+
+    func CurrentFiles()
+      return "\<C-x>\<C-i>"
+    endfunc
+
+    func LanguajeComplete()
+      return "\<C-x>\<C-o>"
+    endfunc
+
+    func DotComplete()
+      return ".\<C-x>\<C-o>"
+    endfunc
+
+    func DashComplete()
+      return "-\<C-x>\<C-i>"
+    endfunc
+
+    func BarComplete()
+      return "/\<C-x>\<C-f>"
+    endfunc
+
+    func BracketComplete()
+      return "()\<esc>i"
+    endfunc
+
+    funct SquareBracketComplete()
+      return "<>\<esc>i"
+    endfunc
+
+    func KeyComplete()
+      return "{}\<esc>i"
+    endfunc
+    func SquareKeyComplete()
+      return "[]\<esc>i"
+    endfunc
+
+    func SimpleQuote()
+      return "''\<esc>i"
+    endfunc
+
+
+    func DoubleQuote()
+      return "\"\"\<esc>i"
+    endfunc
+
+    "snipets node
+    nmap <leader>ni	     :r! cat ~/.nodeSnips/index<CR>
+    nmap <leader>nc      :r! cat ~/.nodeSnips/collation<CR>
+    nmap <leader>nb      :r! cat ~/.nodeSnips/serverDb<CR>
+    "snipets react{
+    nmap <leader>rc	     :r! cat ~/.nodeSnips/reactComponent<CR>/da<CR><space>s
+    nmap <leader>re      :r! cat ~/.nodeSnips/Effect<CR>
+    nmap <leader>rs      :r! cat ~/.nodeSnips/States<CR>2kwwfcce
+    nmap <leader>rf      :r! cat ~/.nodeSnips/Function<CR>2kff<space>s
+    nmap <leader>rfe     :r! cat ~/.nodeSnips/FunctionEvent<CR>2kff<space>s
+    nmap <leader>ra      :r! cat ~/.nodeSnips/ArrowFunction<CR>2kJbf{o
+    nmap <leader>rae     :r! cat ~/.nodeSnips/ArrowFunctionEvent<CR>2kJbf{o
+    nmap <leader>for     :r! cat ~/.nodeSnips/For<CR>2kfx<space>s
+    nmap <leader>if      :r! cat ~/.nodeSnips/If<CR>3ko
+    nmap <leader>btn     :r! cat ~/.nodeSnips/Button<CR>/Fecha<CR>
+    nmap <leader>lay     :r! cat ~/.nodeSnips/Layout<CR>
+    nmap <leader>flex    :r! cat ~/.nodeSnips/Flexbox<CR>/XFA<CR><space>s
+    nmap <leader>e :e ./
+    "media queries
+    nmap <leader>mq	      :r! cat ~/.workSnips/css/media-queries<CR>
+
+    "Line-jump
+    nmap <leader>/ A<CR><ESC>
+    "File replace several files
+    "Find
+    nmap <leader>gf :vimgrep /\<<C-r><C-w>\>/gj *.js<CR>
+    "View
+    nmap <leader>gv :cl<CR>
+    "Replace
+    nmap  <leader>gr :cfdo %s/\<<C-r><C-w>\>/ /g | update 
+    "comment  normal
+    nmap  <leader>; mkI//<esc>`k
+    "coment  inssert mode"
+    inoremap  <leader>/ <esc>I//<esc>A
+
+
+    "cambiar de directorio al entrar a uh buff
+    "Auto change directory"
+    set autochdir
+    "set verbose=9
+    "=========================================================
+    "scripts auto ejecutables 
+    "=========================================================
+    autocmd CompleteDone * if !pumvisible() | pclose | endif
+
+    "Scripts por grupos
+    augroup JavascriptFiles
+      autocmd!
+      autocmd BufRead *.javascript set filetype=javascriptreact
+      autocmd BufRead *.javascript lcd %:p:h
+      autocmd Filetype javascript setlocal omnifunc=javascriptcomplete#CompleteJS 
+    augroup end
+
+    augroup HtmlFiles
+      autocmd!
+      autocmd BufRead *.html set filetype=html
+      autocmd Filetype html setlocal omnifunc=htmlcomplete#CompleteHTML
+      autocmd BufRead *.html lcd %:p:h
+    augroup end
+
+    augroup CssFiles
+      autocmd!
+      autocmd BufRead *.css set filetype=css
+      autocmd Filetype css setlocal omnifunc=csscomplete#CompleteCSS
+      autocmd BufRead *.css lcd %:p:h
+    augroup end
+
+     "" func QuitBuf()
+     ""   for i in range(1, bufnr('$'))
+     ""     if getbufvar(i, '&filetype') == 'netrw'
+     ""       silent exe 'bdelete! ' . i-1
+     ""     endif
+     ""   endfor
+     "" endfunc
+
+    ""augroup NetwrBuffer
+    ""  autocmd!
+    ""  autocmd BufDelete * call QuitBuf()
+    ""augroup end
+
+
+    augroup EnteringOnVim 
+      autocmd!
+      autocmd VimEnter * browse oldfiles "call the function breowseoldfiles
+      autocmd  VimEnter * Lexplore "opens toggle left men
+      autocmd VimEnter * vertical resize 15 "resizes the window 
+      autocmd VimEnter *  wincmd l "jump to left side
+  augroup end
+
+  augroup MakingTabs
+    autocmd!
+    autocmd TabNew * Lexplore "opens toggle left men
+    autocmd TabNew * vertical resize 15 "resizes the window 
+    autocmd TabNew *  wincmd l "jump to left side
+  augroup end
+
+
+  augroup remember_folds
+    autocmd!
+    autocmd BufWinLeave *.* mkview!
+    autocmd BufWinEnter *.* silent loadview 
+  augroup END
+
+  "autocmd VimEnter * split 5
+  "utocmd VimEnter *  wincmd k<CR>
+=======
 endfunction
 
 
@@ -601,3 +809,4 @@ augroup END
 
 "autocmd VimEnter * split 5
 "utocmd VimEnter *  wincmd k<CR>
+>>>>>>> 4d49032aeb9949c5ec8e662323c7a59aa56e2da7
