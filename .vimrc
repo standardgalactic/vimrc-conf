@@ -292,7 +292,7 @@ inoremap <expr> <Tab> TabComplete()
 inoremap <expr> <CR> EnterComplete()
 inoremap <expr> ;i CurrentFiles()
 inoremap <expr> ;l LineComplete()
-inoremap <expr> ;o LanguajeComplete() 
+inoremap <expr> ;o JumpInsert() 
 inoremap <expr> ;n NormalComplete() 
 inoremap <expr> ;j Normal2Complete() 
 inoremap <expr> ;a SelectOption()
@@ -421,7 +421,6 @@ func EnterComplete()
     return "\<C-y>"
   else
     return "\<CR>"
-<<<<<<< HEAD
   endfunction
 
 
@@ -472,8 +471,8 @@ func EnterComplete()
       return "\<C-x>\<C-i>"
     endfunc
 
-    func LanguajeComplete()
-      return "\<C-x>\<C-o>"
+    func JumpInsert()
+      return "\<esc>o"
     endfunc
 
     func DotComplete()
@@ -525,13 +524,15 @@ func EnterComplete()
     nmap <leader>ra      :r! cat ~/.nodeSnips/ArrowFunction<CR>2kJbf{o
     nmap <leader>rae     :r! cat ~/.nodeSnips/ArrowFunctionEvent<CR>2kJbf{o
     nmap <leader>for     :r! cat ~/.nodeSnips/For<CR>2kfx<space>s
-    nmap <leader>if      :r! cat ~/.nodeSnips/If<CR>3ko
+    nmap <leader>if      :r! cat ~/.nodeSnips/If<CR>3kwa!
     nmap <leader>btn     :r! cat ~/.nodeSnips/Button<CR>/Fecha<CR>
     nmap <leader>lay     :r! cat ~/.nodeSnips/Layout<CR>
     nmap <leader>flex    :r! cat ~/.nodeSnips/Flexbox<CR>/XFA<CR><space>s
+    nmap <leader>idf    mq yiw gg :r! cat ~/.nodeSnips/import_file_default<CR>/xzf<CR>ce<C-r>0<esc>f/a<C-x><C-f><tab>
+    nmap <leader>if     mq yiw gg :r! cat ~/.nodeSnips/import_file<CR>/xzf<CR>ce<C-r>0<esc>f/a<C-x><C-f><tab>
     nmap <leader>e :e ./
     "media queries
-    nmap <leader>mq	      :r! cat ~/.workSnips/css/media-queries<CR>
+    nmap <leader>mq	      :r! cat ~/.nodeSnips/css/media-queries<CR>
 
     "Line-jump
     nmap <leader>/ A<CR><ESC>
@@ -565,40 +566,48 @@ func EnterComplete()
       autocmd Filetype javascript setlocal omnifunc=javascriptcomplete#CompleteJS 
     augroup end
 
-    augroup HtmlFiles
-      autocmd!
-      autocmd BufRead *.html set filetype=html
-      autocmd Filetype html setlocal omnifunc=htmlcomplete#CompleteHTML
-      autocmd BufRead *.html lcd %:p:h
-    augroup end
-
-    augroup CssFiles
-      autocmd!
-      autocmd BufRead *.css set filetype=css
-      autocmd Filetype css setlocal omnifunc=csscomplete#CompleteCSS
-      autocmd BufRead *.css lcd %:p:h
-    augroup end
-
-     "" func QuitBuf()
-     ""   for i in range(1, bufnr('$'))
-     ""     if getbufvar(i, '&filetype') == 'netrw'
-     ""       silent exe 'bdelete! ' . i-1
-     ""     endif
-     ""   endfor
-     "" endfunc
-
-    ""augroup NetwrBuffer
+    ""augroup HtmlFiles
     ""  autocmd!
-    ""  autocmd BufDelete * call QuitBuf()
+    ""  autocmd BufRead *.html set filetype=html
+    ""  autocmd Filetype html setlocal omnifunc=htmlcomplete#CompleteHTML
+    ""  autocmd BufRead *.html lcd %:p:h
     ""augroup end
 
 
-    augroup EnteringOnVim 
-      autocmd!
-      autocmd VimEnter * browse oldfiles "call the function breowseoldfiles
-      autocmd  VimEnter * Lexplore "opens toggle left men
-      autocmd VimEnter * vertical resize 15 "resizes the window 
-      autocmd VimEnter *  wincmd l "jump to left side
+    ""augroup AutosetFiletypeStyledComponents
+    ""  autocmd!
+    ""  let var =%/styled-components/
+    ""  autocmd BufNew *.js if var ? set fileType=css|end
+    ""augroup end
+
+  augroup end
+  augroup CssFiles
+    autocmd!
+    autocmd BufRead *.css set filetype=css
+    autocmd Filetype css setlocal omnifunc=csscomplete#CompleteCSS
+    autocmd BufRead *.css lcd %:p:h
+  augroup end
+
+  "" func QuitBuf()
+  ""   for i in range(1, bufnr('$'))
+  ""     if getbufvar(i, '&filetype') == 'netrw'
+  ""       silent exe 'bdelete! ' . i-1
+  ""     endif
+  ""   endfor
+  "" endfunc
+
+  ""augroup NetwrBuffer
+  ""  autocmd!
+  ""  autocmd BufDelete * call QuitBuf()
+  ""augroup end
+
+
+  augroup EnteringOnVim 
+    autocmd!
+    autocmd VimEnter * browse oldfiles "call the function breowseoldfiles
+    autocmd  VimEnter * Lexplore "opens toggle left men
+    autocmd VimEnter * vertical resize 15 "resizes the window 
+    autocmd VimEnter *  wincmd l "jump to left side
   augroup end
 
   augroup MakingTabs
@@ -617,5 +626,4 @@ func EnterComplete()
 
   "autocmd VimEnter * split 5
   "utocmd VimEnter *  wincmd k<CR>
-
 
