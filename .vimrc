@@ -192,7 +192,7 @@ nnoremap <leader>a G
 "nnoremap <leader>au :set omnifunc=javascriptcomplete#CompleteJS<CR>
 "guardado
 nnoremap<leader>w :w<CR>
-nnoremap<leader>q :q<CR>
+nnoremap<leader>q :q <CR> :q<CR>
 "buscar y reemplazar
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 nnoremap <Leader>sf  :find 
@@ -529,7 +529,7 @@ func EnterComplete()
     nmap <leader>lay     :r! cat ~/.nodeSnips/Layout<CR>
     nmap <leader>flex    :r! cat ~/.nodeSnips/Flexbox<CR>/XFA<CR><space>s
     nmap <leader>idf    mq yiw gg :r! cat ~/.nodeSnips/import_file_default<CR>/xzf<CR>ce<C-r>0<esc>f/a<C-x><C-f><tab>
-    nmap <leader>if     mq yiw gg :r! cat ~/.nodeSnips/import_file<CR>/xzf<CR>ce<C-r>0<esc>f/a<C-x><C-f><tab>
+    nmap <leader>inf     mq yiw gg :r! cat ~/.nodeSnips/import_file<CR>/xzf<CR>ce<C-r>0<esc>f/a<C-x><C-f><tab>
     nmap <leader>e :e ./
     "media queries
     nmap <leader>mq	      :r! cat ~/.nodeSnips/css/media-queries<CR>
