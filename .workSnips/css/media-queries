@@ -1,5 +1,0 @@
-    @media (max-width:768px){  
-    }/*final del media query*/
-
-    @media (max-width:650px){ 
-    }/*final del media query*/
