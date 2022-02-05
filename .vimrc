@@ -234,6 +234,8 @@ nmap <leader>p :r! cat /tmp/vitmp<CR>
 "lee y pega el documento Console con lo que imprime un console log
 nmap <leader>c :r! cat ~/.nodeSnips/Console<CR>fds
 nmap <leader>cp mcggvGy`c
+
+
 "clearconsole
 nmap<leader>zl :! clear<CR> 
 "=========================================================
@@ -298,6 +300,7 @@ inoremap <expr> ;j Normal2Complete()
 inoremap <expr> ;a SelectOption()
 inoremap <expr> ;z JumpToEndLineAndEdit()
 inoremap <expr> ;w SaveInsert()
+inoremap <expr> w; SaveInsert()
 inoremap <expr> ;q Quit()
 inoremap <expr> ;; Semicolom()
 inoremap <expr> hh Return() 
@@ -519,7 +522,8 @@ func EnterComplete()
     nmap <leader>rc	     :r! cat ~/.nodeSnips/reactComponent<CR>/da<CR><space>s
     nmap <leader>re      :r! cat ~/.nodeSnips/Effect<CR>
     nmap <leader>rs      :r! cat ~/.nodeSnips/States<CR>2kwwfcce
-    nmap <leader>rf      :r! cat ~/.nodeSnips/Function<CR>2kff<space>s
+    ""nmap <leader>rf      :r! cat ~/.nodeSnips/Function<CR>2kff<space>s
+    nmap <leader>rf    mq yiw O ;o  <esc>:r! cat ~/.nodeSnips/Function<CR>/xzf<CR>ce<C-r>0<esc>o
     nmap <leader>rfe     :r! cat ~/.nodeSnips/FunctionEvent<CR>2kff<space>s
     nmap <leader>ra      :r! cat ~/.nodeSnips/ArrowFunction<CR>2kJbf{o
     nmap <leader>rae     :r! cat ~/.nodeSnips/ArrowFunctionEvent<CR>2kJbf{o
