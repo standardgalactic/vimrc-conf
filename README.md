@@ -15,10 +15,10 @@
 2.- Descarga  este manejador de plugins para instalar estos 4 plugins
         curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-•Plug 'itchyny/lightline.vim'<br>
-•Plug 'mattn/emmet-vim'<br>
-•Plug 'morhetz/gruvbox'<br>
-•Plug 'Yggdroot/indentLine'<br>
+*Plug 'itchyny/lightline.vim' <br>
+*Plug 'mattn/emmet-vim' <br>
+*Plug 'morhetz/gruvbox' <br>
+*Plug 'Yggdroot/indentLine' <br>
 ---
 3.- after that we open vim and execute this command :PlugInstall<br>
 3.- despues abrimos vim y corremos :PlugInstall<br>
@@ -39,10 +39,10 @@ DISFRUTA de tus templates para vim <br>
 |Mode  | Command | Result |
 |------|---------|--------|
 ---
-Node-Snipets
+Node-Snipets<br>
 __---
 |normal | <leader>ni| template estandar de index node|
-|normal |<leader>nb | template estandar para insertar collation de node|
+|normal |<leader>nb | template estandar para insertar collation de node|t 
 normal  <leader>nc = template estandar de conexion mongo - node
 __________________
 React-Snipets
