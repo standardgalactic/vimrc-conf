@@ -1,9 +1,9 @@
 # vimrc-conf
-=======================================================================================<br>
+---
 ## For first timers:<br>
 1.- Download all files from git@github.com:includeovalle/vimrc-conf.git
 1.- Primero descarga los archivos: git@github.com:includeovalle/vimrc-conf.git 
-
+---
 2.- Download this plugin in order to easily install this 4 pluggins
         curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -20,28 +20,28 @@
 •Plug 'mattn/emmet-vim'
 •Plug 'morhetz/gruvbox'
 •Plug 'Yggdroot/indentLine'
-
+---
 3.- after that we open vim and execute this command :PlugInstall
 3.- despues abrimos vim y corremos :PlugInstall
-=========================================================================================
+---
 4.- In ~/ create a folder named .nodeSnips so you can access cd ~/.nodeSnips/
 4.- En el directorio ~/ crea un folder llamado .nodeSnips de modo que sea cd ~/.nodeSnips/
 
 cd ~/
 mkdir .nodeSnips
-=========================================================================================
+---
 5.-Copy all files of the this folder to ~/.nodeSnips/
 5.-Copia todos los archivos de este folder a ~/.nodeSnips/
-=========================================================================================
+---
 DONE enjoy from some snipets as well as some configurations
 ¡¡LISTO!!
 DISFRUTA de tus templates para vim 
-===============================================================
-Mode    Command               Result
-______________________________________________________________
+---
+Mode  | Command | Result
+---
 Node-Snipets
-__________________
-normal  <leader>ni = template estandar de index node
+__---
+normal | <leader>ni| template estandar de index node
 normal  <leader>nb = template estandar para insertar collation de node
 normal  <leader>nc = template estandar de conexion mongo - node
 __________________
