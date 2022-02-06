@@ -1,8 +1,8 @@
 # vimrc-conf<br>
 ---
 ### For first timers:<br>
-1 Download all files from git@github.com:includeovalle/vimrc-conf.git<br>
-1 Primero descarga los archivos: git@github.com:includeovalle/vimrc-conf.git <br>
+1 Download all files from git@github.com:includeovalle/vimrc-conf.git <br>
+1 Primero descarga los archivos:[github] (git@github.com:includeovalle/vimrc-conf.git) <br>
 ---
 2 Download this plugin in order to easily install this 4 pluggins<br>
   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim <br>
