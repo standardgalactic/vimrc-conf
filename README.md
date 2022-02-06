@@ -31,8 +31,8 @@
 
 ---
 
-4 In ~/ create a folder named .nodeSnips so you can access cd ~/.nodeSnips/<br>
-4 n el directorio ~/ crea un folder llamado .nodeSnips de modo que sea cd ~/.nodeSnips/<br>
+4 In folder ~/ create a folder named .nodeSnips so you can access cd ~/.nodeSnips/<br>
+4 En el directorio ~/ crea un folder llamado .nodeSnips de modo que sea cd ~/.nodeSnips/<br>
 
 cd ~/<br>
 mkdir .nodeSnips<br>
@@ -109,27 +109,32 @@ Vim Commands
 |normal|  \<leader\>[ |folding|
 |normal|  \<leader\>z( |folding|
 |normal|  \<leader\>( | folding|
+|normal|  \<shift\>T |  open new tab|
+|normal|  \<control\>y | insert explore window same as :Lexplore|
 
 
-normal  \<shift\>T  = open new tab
-normal  \<control\>y =insert explore window same as :Lexplore
+|insert|  \<TAB\>| shows an autocomplete menu|
+|---|---|---|
 
-
-insert  \<TAB\> shows an autocomplete menu
-__________________
+---
 MACROS
-__________________
-let @p puts the current word between quotes ""
-let @o puts the current word between {}
-let @u puts the current word between ()
-let @i puts the current word between ''
+
+---
+
+let @p puts the current word between quotes ""<br>
+let @o puts the current word between {}<br>
+let @u puts the current word between ()<br>
+let @i puts the current word between ''<br>
 
   
-"=========================================================
-"comandos git/ comandos globales
-"=========================================================
-normal \<Leader\>gs :! git status\<CR\>
-normal \<Leader\>gc :! git commit -a -m''
-normal \<Leader\>ga :! git add .\<CR\>
-normal \<Leader\>gp :! git push -u origin\<CR\>
+---
+Comandos GIT
+
+---
+
+|normal| \<Leader\>gs | :! git status\<CR\>|
+|---|---|---|
+|normal| \<Leader\>gc | :! git commit -a -m''|
+|normal| \<Leader\>ga | :! git add .\<CR\>|
+|normal| \<Leader\>gp | :! git push -u origin\<CR\>|
 
