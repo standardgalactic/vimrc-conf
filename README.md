@@ -54,10 +54,9 @@ Node-Snipets<br>
 ---
 
 |normal | <leader>ni| template estandar de index node |
+|---|---|---|
 |normal |<leader>nb | template estandar para insertar collation de node|
-| | | |
 |normal | <leader>nc| template estandar de conexion mongo - node     |
-|-------|-----------|--------------------------|
 
 ---
 React-Snipets
@@ -70,42 +69,42 @@ React-Snipets
 |normal |<leader>ra | template estandar de arrow function|
 |normal |<leader>rc | template estandar de functionComponent react - node|
 |normal |<leader>flex | template estandar de styled-components|
-normal  |<leader>lay| template estandar de layout react |
-normal  |<leader>c  | insert a console.log()|
-|---|---|---|
+|normal  |<leader>lay| template estandar de layout react |
+|normal  |<leader>c  | insert a console.log()|
 
 ---
 
 Vim Commands
 ---
 
-normal  <F1> = Enter to your ~/.nodeSnips folder
-normal  <F2> = Enter to your ~/.vimrc
-normal  <F4> = Buffer list and pick one same as :ls <cr> :b
-normal  <F5> = Updates to last vimrc local conf ~/.vimrc  same as :so ~/.vimrc
-normal  <leader><Tab> saves document and jumps to last document opened
-normal  <leader>w saves the current document same as :w
-normal  <leader>q saves the current document same as :q
-normal  <leader>{1-9} =Jump to tab 1, 2,3, 4 etc as you need
-normal  <leader>e = edit a file same as :e
-normal  <leader>f = shows a command we need to put inside the quotes the word to look for in the current directory
-normal  <leader>s = Search and replace a word for the word we enter on the entire document
-normal  <leader>; =insert // at the begining of the line
-normal  <leader>/ =insert <CR>
-normal	<leader>h =moves to left window
-normal	<leader>j =moves to down window
-normal	<leader>k =moves to up window
-normal	<leader>l =mover to right window
-normal  <leader>a  =same as G may jump to {1-999} line or to last bottom of the document
-normal  <leader>ff = shows all coincidences in the document from the word under the cursor 
-normal  <leader>ss = Search and replace a word for the word we enter on the entire document
-normal  <leader>cp = copies the whole document to the clipboard
-normal  <leader>z{ folding { with a char infront example: function(){}	
-normal  <leader>{ folding { with nothing infront example: {}	
-normal  <leader>z[ folding
-normal  <leader>[ folding
-normal  <leader>z( folding
-normal  <leader>( folding
+|normal|  <F1> |  Enter to your ~/.nodeSnips folder|
+|---|---|---|
+|normal|  <F2> | Enter to your ~/.vimrc|
+|normal|  <F4> | Buffer list and pick one same as :ls <cr> :b|
+|normal|  <F5> | Updates to last vimrc local conf ~/.vimrc  same as :so ~/.vimrc|
+|normal|  <leader><Tab> |saves document and jumps to last document opened|
+|normal|  <leader>w |saves the current document same as :w|
+|normal|  <leader>q |saves the current document same as :q|
+|normal|  <leader>{1-9} |=Jump to tab 1, 2,3, 4 etc as you need|
+|normal|  <leader>e  |edit a file same as :e|
+|normal|  <leader>f | shows a command we need to put inside the quotes the word to look for in the current directory|
+|normal|  <leader>s  |Search and replace a word for the word we enter on the entire document|
+|normal|  <leader>; |insert // at the begining of the line|
+|normal|  <leader>/ |insert <CR>|
+|normal|  <leader>h |moves to left window|
+|normal|  <leader>j |moves to down window|
+|normal|  <leader>k |moves to up window|
+|normal|  <leader>l |mover to right window|
+|normal|  <leader>a  |same as G may jump to {1-999} line or to last bottom of the document|
+|normal|  <leader>ff  |shows all coincidences in the document from the word under the cursor |
+|normal|  <leader>ss  |Search and replace a word for the word we enter on the entire document|
+|normal|  <leader>cp | copies the whole document to the clipboard|
+|normal|  <leader>z{ |folding { with a char infront example: function(){}	|
+|normal|  <leader>{ |folding { with nothing infront example: {}	|
+|normal|  <leader>z[ |folding|
+|normal|  <leader>[ |folding|
+|normal|  <leader>z( |folding|
+|normal|  <leader>( | folding|
 
 
 normal  <shift>T  = open new tab
