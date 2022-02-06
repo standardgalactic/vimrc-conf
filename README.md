@@ -54,7 +54,9 @@ Node-Snipets<br>
 ---
 
 |normal | <leader>ni| template estandar de index node |
+|-------|-----------|--------------------------|
 |normal |<leader>nb | template estandar para insertar collation de node|
+|-------|-----------|--------------------------|
 |normal | <leader>nc| template estandar de conexion mongo - node     |
 |-------|-----------|--------------------------|
 
