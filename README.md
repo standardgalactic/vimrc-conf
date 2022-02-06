@@ -3,7 +3,7 @@
 ## For first timers:<br>
 1.- Download all files from git@github.com:includeovalle/vimrc-conf.git<br>
 1.- Primero descarga los archivos: git@github.com:includeovalle/vimrc-conf.git <br>
----<br>
+---
 2.- Download this plugin in order to easily install this 4 pluggins<br>
         curl -fLo ~/.vim/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim<br>
 
@@ -19,29 +19,30 @@
 •Plug 'mattn/emmet-vim'<br>
 •Plug 'morhetz/gruvbox'<br>
 •Plug 'Yggdroot/indentLine'<br>
----<br>
+---
 3.- after that we open vim and execute this command :PlugInstall<br>
 3.- despues abrimos vim y corremos :PlugInstall<br>
----<br>
-4.- In ~/ create a folder named .nodeSnips so you can access cd ~/.nodeSnips/
-4.- En el directorio ~/ crea un folder llamado .nodeSnips de modo que sea cd ~/.nodeSnips/
+---
+4.- In ~/ create a folder named .nodeSnips so you can access cd ~/.nodeSnips/<br>
+4.- En el directorio ~/ crea un folder llamado .nodeSnips de modo que sea cd ~/.nodeSnips/<br>
 
-cd ~/
-mkdir .nodeSnips
+cd ~/<br>
+mkdir .nodeSnips<br>
 ---
-5.-Copy all files of the this folder to ~/.nodeSnips/
-5.-Copia todos los archivos de este folder a ~/.nodeSnips/
+5.-Copy all files of the this folder to ~/.nodeSnips/<br>
+5.-Copia todos los archivos de este folder a ~/.nodeSnips/<br>
 ---
-DONE enjoy from some snipets as well as some configurations
-¡¡LISTO!!
-DISFRUTA de tus templates para vim 
+DONE enjoy from some snipets as well as some configurations<br>
+¡¡LISTO!! disfruta de algunos snipets y configuraciones<br>
+DISFRUTA de tus templates para vim <br>
 ---
-Mode  | Command | Result
+|Mode  | Command | Result |
+|------|---------|--------|
 ---
 Node-Snipets
 __---
-normal | <leader>ni| template estandar de index node
-normal  <leader>nb = template estandar para insertar collation de node
+|normal | <leader>ni| template estandar de index node|
+|normal |<leader>nb | template estandar para insertar collation de node|
 normal  <leader>nc = template estandar de conexion mongo - node
 __________________
 React-Snipets
