@@ -1,6 +1,6 @@
 # vimrc-conf
-=======================================================================================
-For first timers:
+=======================================================================================<br>
+## For first timers:<br>
 1.- Download all files from git@github.com:includeovalle/vimrc-conf.git
 1.- Primero descarga los archivos: git@github.com:includeovalle/vimrc-conf.git 
 
