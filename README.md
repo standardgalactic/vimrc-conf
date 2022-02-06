@@ -1,29 +1,28 @@
-# vimrc-conf
+# vimrc-conf<br>
 ---
 ## For first timers:<br>
-1.- Download all files from git@github.com:includeovalle/vimrc-conf.git
-1.- Primero descarga los archivos: git@github.com:includeovalle/vimrc-conf.git 
----
-2.- Download this plugin in order to easily install this 4 pluggins
-        curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+1.- Download all files from git@github.com:includeovalle/vimrc-conf.git<br>
+1.- Primero descarga los archivos: git@github.com:includeovalle/vimrc-conf.git <br>
+---<br>
+2.- Download this plugin in order to easily install this 4 pluggins<br>
+        curl -fLo ~/.vim/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim<br>
 
-•Plug 'itchyny/lightline.vim'
-•Plug 'mattn/emmet-vim'
-•Plug 'morhetz/gruvbox'
-•Plug 'Yggdroot/indentLine'
+•Plug 'itchyny/lightline.vim'<br>
+•Plug 'mattn/emmet-vim'<br>
+•Plug 'morhetz/gruvbox'<br>
+•Plug 'Yggdroot/indentLine'<br>
 
 2.- Descarga  este manejador de plugins para instalar estos 4 plugins
         curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-•Plug 'itchyny/lightline.vim'
-•Plug 'mattn/emmet-vim'
-•Plug 'morhetz/gruvbox'
-•Plug 'Yggdroot/indentLine'
----
-3.- after that we open vim and execute this command :PlugInstall
-3.- despues abrimos vim y corremos :PlugInstall
----
+•Plug 'itchyny/lightline.vim'<br>
+•Plug 'mattn/emmet-vim'<br>
+•Plug 'morhetz/gruvbox'<br>
+•Plug 'Yggdroot/indentLine'<br>
+---<br>
+3.- after that we open vim and execute this command :PlugInstall<br>
+3.- despues abrimos vim y corremos :PlugInstall<br>
+---<br>
 4.- In ~/ create a folder named .nodeSnips so you can access cd ~/.nodeSnips/
 4.- En el directorio ~/ crea un folder llamado .nodeSnips de modo que sea cd ~/.nodeSnips/
 
