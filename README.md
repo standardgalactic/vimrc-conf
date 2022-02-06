@@ -41,9 +41,10 @@ DISFRUTA de tus templates para vim <br>
 ---
 Node-Snipets<br>
 __---
-|normal | <leader>ni| template estandar de index node|
-|normal |<leader>nb | template estandar para insertar collation de node|t 
-normal  <leader>nc = template estandar de conexion mongo - node
+|-------|-----------|-----------------------------------------------|
+|normal | <leader>ni| template estandar de index node---------------|
+|normal |<leader>nb | template estandar para insertar collation de node|
+|normal | <leader>nc| template estandar de conexion mongo - node     |
 __________________
 React-Snipets
 __________________
