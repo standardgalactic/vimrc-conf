@@ -7,18 +7,18 @@
 2 Download this plugin in order to easily install this 4 pluggins<br>
   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim <br>
 
-•Plug 'itchyny/lightline.vim'<br>
-•Plug 'mattn/emmet-vim'<br>
-•Plug 'morhetz/gruvbox'<br>
-•Plug 'Yggdroot/indentLine'<br>
+* Plug 'itchyny/lightline.vim'
+* Plug 'mattn/emmet-vim'
+* Plug 'morhetz/gruvbox'
+* Plug 'Yggdroot/indentLine'
 
 2 Descarga  este manejador de plugins para instalar estos 4 plugins
         curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-*Plug 'itchyny/lightline.vim' <br>
-*Plug 'mattn/emmet-vim' <br>
-*Plug 'morhetz/gruvbox' <br>
-*Plug 'Yggdroot/indentLine' <br>
+* Plug 'itchyny/lightline.vim' 
+* Plug 'mattn/emmet-vim' 
+* Plug 'morhetz/gruvbox' 
+* Plug 'Yggdroot/indentLine' 
 ---
 3 After that we open vim and execute this command :PlugInstall<br>
 3 Despues abrimos vim y corremos :PlugInstall<br>
