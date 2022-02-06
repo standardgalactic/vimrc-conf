@@ -1,8 +1,8 @@
 # vimrc-conf<br>
 ---
 ### For first timers
- Download all files from <br> [github](https://github.com/includeovalle/vimrc-conf.git)
-1 Primero descarga los archivos de <br> [github](https://github.com/includeovalle/vimrc-conf.git)
+ Download all files from [github/includeovalle](https://github.com/includeovalle/vimrc-conf.git) <br>
+1 Primero descarga los archivos de [github/includeovalle](https://github.com/includeovalle/vimrc-conf.git)<br>
 
 ---
 
@@ -15,8 +15,7 @@
 * Plug 'Yggdroot/indentLine'
 
 2 Descarga  este manejador de plugins para instalar estos 4 plugins
-        curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        curl -fLo ~/.vim/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 * Plug 'itchyny/lightline.vim' 
 * Plug 'mattn/emmet-vim' 
 * Plug 'morhetz/gruvbox' 
@@ -52,14 +51,18 @@ DISFRUTA de tus templates para vim <br>
 Node-Snipets<br>
 
 ---
-|-------|-----------|-----------------------------------------------|
-|normal | <leader>ni| template estandar de index node---------------|
+
+|-------|-----------|--------------------------|
+|normal | <leader>ni| template estandar        | 
+|       |           | de index node            |
+|-------|-----------|--------------------------|
 |normal |<leader>nb | template estandar para insertar collation de node|
 |normal | <leader>nc| template estandar de conexion mongo - node     |
 |-------|-----------|-----------------------------------------------|
 
 ---
 React-Snipets
+
 ---
 
 |-------|-----------|-----------------------------------------------|
