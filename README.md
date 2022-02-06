@@ -40,7 +40,7 @@ DISFRUTA de tus templates para vim <br>
 |------|---------|--------|
 ---
 Node-Snipets<br>
-__---
+---
 |-------|-----------|-----------------------------------------------|
 |normal | <leader>ni| template estandar de index node---------------|
 |normal |<leader>nb | template estandar para insertar collation de node|
