@@ -54,7 +54,9 @@ Node-Snipets<br>
 ---
 
 |normal | <leader>ni| template estandar de index node |
+| | | |
 |normal |<leader>nb | template estandar para insertar collation de node|
+| | | |
 |normal | <leader>nc| template estandar de conexion mongo - node     |
 |-------|-----------|--------------------------|
 
@@ -64,13 +66,13 @@ React-Snipets
 ---
 
 |normal |<leader>rs | template estandar de useState react - node]|
-|-------|-----------|--------------------------|
+| | | |
 |normal |<leader>re | template estandar de useEffect react - node|
-|-------|-----------|--------------------------|
+| | | |
 |normal |<leader>ra | template estandar de arrow function|
-|-------|-----------|--------------------------|
+| | | |
 |normal |<leader>rc | template estandar de functionComponent react - node|
-|-------|-----------|--------------------------|
+| | | |
 |normal |<leader>flex | template estandar de styled-components|
 | | | |
 normal  |<leader>lay| template estandar de layout react |
