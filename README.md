@@ -1,9 +1,11 @@
 # vimrc-conf<br>
 ---
-### For first timers:<br>
- Download all files from [github](https://github.com/includeovalle/vimrc-conf.git)<br>
-1 Primero descarga los archivos:[github](https://github.com/includeovalle/vimrc-conf.git)<br>
+### For first timers
+ Download all files from <br> [github](https://github.com/includeovalle/vimrc-conf.git)
+1 Primero descarga los archivos de <br> [github](https://github.com/includeovalle/vimrc-conf.git)
+
 ---
+
 2 Download this plugin in order to easily install this 4 pluggins<br>
   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim <br>
 
@@ -19,42 +21,55 @@
 * Plug 'mattn/emmet-vim' 
 * Plug 'morhetz/gruvbox' 
 * Plug 'Yggdroot/indentLine' 
+
 ---
+
 3 After that we open vim and execute this command :PlugInstall<br>
 3 Despues abrimos vim y corremos :PlugInstall<br>
+
 ---
+
 4 In ~/ create a folder named .nodeSnips so you can access cd ~/.nodeSnips/<br>
 4 n el directorio ~/ crea un folder llamado .nodeSnips de modo que sea cd ~/.nodeSnips/<br>
 
 cd ~/<br>
 mkdir .nodeSnips<br>
+
 ---
 5.-Copy all files of the this folder to ~/.nodeSnips/<br>
 5.-Copia todos los archivos de este folder a ~/.nodeSnips/<br>
+
 ---
 DONE enjoy from some snipets as well as some configurations<br>
 ¡¡LISTO!! disfruta de algunos snipets y configuraciones<br>
 DISFRUTA de tus templates para vim <br>
+
 ---
 |Mode  | Command | Result |
 |------|---------|--------|
+
 ---
 Node-Snipets<br>
+
 ---
 |-------|-----------|-----------------------------------------------|
 |normal | <leader>ni| template estandar de index node---------------|
 |normal |<leader>nb | template estandar para insertar collation de node|
 |normal | <leader>nc| template estandar de conexion mongo - node     |
-__________________
+|-------|-----------|-----------------------------------------------|
+
+---
 React-Snipets
-__________________
-normal  <leader>rs = template estandar de useState react - node
-normal  <leader>re = template estandar de useEffect react - node
-normal  <leader>ra = template estandar de arrow function
-normal  <leader>rc = template estandar de functionComponent react - node
-normal  <leader>flex = template estandar de styled-components
-normal  <leader>layout = template estandar de layout react 
-normal  <leader>c insert a console.log()
+---
+
+|-------|-----------|-----------------------------------------------|
+normal  |<leader>rs  template estandar de useState react - node
+normal  |<leader>re  template estandar de useEffect react - node
+normal  |<leader>ra  template estandar de arrow function
+normal  |<leader>rc  template estandar de functionComponent react - node
+normal  |<leader>flex  template estandar de styled-components
+normal  |<leader>lay  template estandar de layout react 
+normal  |<leader>c insert a console.log()
 __________________
 Vim Commands
 __________________
