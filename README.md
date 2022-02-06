@@ -66,14 +66,24 @@ React-Snipets
 
 ---
 
-|normal |\<leader\>rs | template estandar de useState react - node]|
+|normal |\<leader\>rc | template estandar de functionComponent react - node|
 |---|---|---|
 |normal |\<leader\>re | template estandar de useEffect react - node|
+|normal |\<leader\>rs | template estandar de useState react - node]|
+| normal <leader>rf   |   :r! cat ~/.nodeSnips/Function<CR>2kff<space>s|
+| normal <leader>rfe  |   :r! cat ~/.nodeSnips/FunctionEvent<CR>2kff<space>s|
 |normal |\<leader\>ra | template estandar de arrow function|
-|normal |\<leader\>rc | template estandar de functionComponent react - node|
-|normal |\<leader\>flex | template estandar de styled-components|
+|    normal <leader>rae   |  :r! cat ~/.nodeSnips/ArrowFunctionEvent<CR>2kJbf{o|
+|    normal <leader>for  |   :r! cat ~/.nodeSnips/For<CR>2kfx<space>s|
+|    normal <leader>if   |   :r! cat ~/.nodeSnips/If<CR>3kwa!|
+|    normal <leader>btn |    :r! cat ~/.nodeSnips/Button<CR>/Fecha<CR>|
 |normal  |\<leader\>lay| template estandar de layout react |
-|normal  |\<leader\>c  | insert a console.log()|
+|normal |\<leader\>flex | template estandar de styled-components|
+|    normal <leader>idf |   mq yiw gg :r! cat ~/.nodeSnips/import_file_default<CR>/xzf<CR>ce<C-r>0<esc>f/a<C-x><C-f><tab>|
+|    normal <leader>inf|     mq yiw gg :r! cat ~/.nodeSnips/import_file<CR>/xzf<CR>ce<C-r>0<esc>f/a<C-x><C-f><tab>|
+|normal |\<leader\>rc | template estandar de arrow function|
+|normal |\<leader\>c  | insert a console.log()|
+|normal |<leader>mq   |	      :r! cat ~/.nodeSnips/css/media-queries<CR>|
 
 ---
 
