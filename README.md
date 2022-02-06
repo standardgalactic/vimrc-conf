@@ -1,7 +1,7 @@
 # vimrc-conf<br>
 ---
 ### For first timers:<br>
-1.- Download all files from git@github.com:includeovalle/vimrc-conf.git<br>
+1 Download all files from git@github.com:includeovalle/vimrc-conf.git<br>
 1 Primero descarga los archivos: git@github.com:includeovalle/vimrc-conf.git <br>
 ---
 2 Download this plugin in order to easily install this 4 pluggins<br>
@@ -12,7 +12,7 @@
 •Plug 'morhetz/gruvbox'<br>
 •Plug 'Yggdroot/indentLine'<br>
 
-2.- Descarga  este manejador de plugins para instalar estos 4 plugins
+2 Descarga  este manejador de plugins para instalar estos 4 plugins
         curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 *Plug 'itchyny/lightline.vim' <br>
@@ -24,7 +24,7 @@
 3 Despues abrimos vim y corremos :PlugInstall<br>
 ---
 4 In ~/ create a folder named .nodeSnips so you can access cd ~/.nodeSnips/<br>
-4 En el directorio ~/ crea un folder llamado .nodeSnips de modo que sea cd ~/.nodeSnips/<br>
+4 n el directorio ~/ crea un folder llamado .nodeSnips de modo que sea cd ~/.nodeSnips/<br>
 
 cd ~/<br>
 mkdir .nodeSnips<br>
