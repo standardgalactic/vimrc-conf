@@ -33,7 +33,7 @@ let netrw_mousemaps=1
 "Saludos Vergas
 "=========================================================
 echo '¿Comanzamos?'
-autocmd VimEnter * echo  "vamos a matarno enla raya"
+autocmd VimEnter * echo  "Welcome Codere"
 
 "busqueda en tiempo real de texto
 set hlsearch
@@ -221,7 +221,7 @@ nmap <silent><F1> :silent e ~/.nodeSnips/<CR>
 " vimrc
 nmap <silent> <F2> :silent e ~/.vimrc <CR> 
 "list buffers
-nmap <silent><F4> :ls<CR>:b 
+nmap <silent><F4> :ls<CR>:b  
 "vim Source
 nmap <silent><F5> :silent so ~/.vimrc <CR> 
 
@@ -233,9 +233,7 @@ nmap <leader>p :r! cat /tmp/vitmp<CR>
 
 "lee y pega el documento Console con lo que imprime un console log
 nmap <leader>c :r! cat ~/.nodeSnips/Console<CR>fds
-nmap <leader>cp mcggvGy`c
-
-
+nmap <leader>cp mcgg<S-v>Gy`c
 "clearconsole
 nmap<leader>zl :! clear<CR> 
 "=========================================================
@@ -260,7 +258,7 @@ nmap<silent> <leader><Tab> :w<CR><C-^>
 
 "buscar un texto dento de los archivos de la carpeta
 nmap <leader>f :! grep -Ril "" ./
-nmap <leader>ff :g/\<<C-r><C-w>\>/#
+nmap <leader>ff :g/\<<C-r><C-w>\>/#<CR>
 
 "directory tree
 let g:netrw_banner=0	      "disables banner"
@@ -300,7 +298,6 @@ inoremap <expr> ;j Normal2Complete()
 inoremap <expr> ;a SelectOption()
 inoremap <expr> ;z JumpToEndLineAndEdit()
 inoremap <expr> ;w SaveInsert()
-inoremap <expr> w; SaveInsert()
 inoremap <expr> ;q Quit()
 inoremap <expr> ;; Semicolom()
 inoremap <expr> hh Return() 
@@ -522,8 +519,7 @@ func EnterComplete()
     nmap <leader>rc	     :r! cat ~/.nodeSnips/reactComponent<CR>/da<CR><space>s
     nmap <leader>re      :r! cat ~/.nodeSnips/Effect<CR>
     nmap <leader>rs      :r! cat ~/.nodeSnips/States<CR>2kwwfcce
-    ""nmap <leader>rf      :r! cat ~/.nodeSnips/Function<CR>2kff<space>s
-    nmap <leader>rf    mq yiw O ;o  <esc>:r! cat ~/.nodeSnips/Function<CR>/xzf<CR>ce<C-r>0<esc>o
+    nmap <leader>rf      :r! cat ~/.nodeSnips/Function<CR>2kff<space>s
     nmap <leader>rfe     :r! cat ~/.nodeSnips/FunctionEvent<CR>2kff<space>s
     nmap <leader>ra      :r! cat ~/.nodeSnips/ArrowFunction<CR>2kJbf{o
     nmap <leader>rae     :r! cat ~/.nodeSnips/ArrowFunctionEvent<CR>2kJbf{o
@@ -542,11 +538,11 @@ func EnterComplete()
     nmap <leader>/ A<CR><ESC>
     "File replace several files
     "Find
-    nmap <leader>gf :vimgrep /\<<C-r><C-w>\>/gj *.js<CR>
+    nmap <leader>gf :vimgrep /\<<C-r><C-w>\>/g ../**/*.js<CR>
     "View
-    nmap <leader>gv :cl<CR>
+    nmap <leader>gv :cw<CR>
     "Replace
-    nmap  <leader>gr :cfdo %s/\<<C-r><C-w>\>/ /g | update 
+    nmap  <leader>gr :cfdo %s/\<<C-r><C-w>\>/repl/g | update 
     "comment  normal
     nmap  <leader>; mkI//<esc>`k
     "coment  inssert mode"
@@ -574,6 +570,7 @@ func EnterComplete()
     ""  autocmd!
     ""  autocmd BufRead *.html set filetype=html
     ""  autocmd Filetype html setlocal omnifunc=htmlcomplete#CompleteHTML
+
     ""  autocmd BufRead *.html lcd %:p:h
     ""augroup end
 

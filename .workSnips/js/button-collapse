@@ -1,0 +1,29 @@
+{
+  //collapse normal
+
+  //variables
+  let clone = template.content.cloneNode( true);
+  let card = clone.querySelector('.card');
+  let img = clone.querySelector(".img-container");
+  let button = clone.querySelector(".button-collapse");
+  let isOpen = false;
+
+  //funciones
+
+  //toggle
+  function collapse(){
+    return  isOpen===false? (card.style.display='flex', isOpen= true)
+      : (card.style.display='none',isOpen= false)
+  }
+  
+  //inserciones HTML CSS
+
+  button.textContent = "Objetivos";
+  card.style.display = 'none';
+  button.addEventListener('click', collapse)
+
+  //inserciones al DOM
+  fragment.appendChild(clone);
+  menu.appendChild(fragment);
+  mainContainer.appendChild(menu)
+}

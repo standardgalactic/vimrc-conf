@@ -1,0 +1,51 @@
+{
+  //menu collapse section
+  //variables
+  let clone = template.content.cloneNode( true);
+  let card = clone.querySelector('.card');
+  let img = clone.querySelector(".img-container");
+  let button = clone.querySelector(".button-collapse");
+  let isOpen = false;
+  let P = card.querySelector("p");
+  let Ptitle = button.querySelector(".title");
+  let Pdescription = button.querySelector(".description");
+
+  //seccion de funciones
+  /*params: array 
+   * descripcion: Toma el array y nos devuelve un valor al azar de èste.
+   * */
+  function randomColor(color){
+    return color[Math.floor(Math.random()*color.length)];
+  }
+  let backgroundButton = randomColor(colors)
+
+  //funcion collapse
+  function collapse(){
+    return  isOpen===false? (card.style.display='flex', isOpen= true)
+      : (card.style.display='none',isOpen= false)
+  }
+
+//aqui se modifica de manera automatica en cada recarga el color
+//del hover
+  function changeBackgroundButton(){
+    button.style.backgroundColor = backgroundButton;
+  }
+  function returnBackgroundButton(){
+    button.style.backgroundColor = "transparent";
+  }
+
+  //inserciones HTML CSS
+  card.style.display = 'none';
+  Ptitle.innerHTML = "Unidad1";
+  Pdescription.innerHTML = "una descripcion breve";
+  button.addEventListener("mouseenter",changeBackgroundButton);
+  button.addEventListener("mouseleave",returnBackgroundButton);
+  button.addEventListener('click',collapse); 
+  img.style.backgroundImage = "url('./img/01_img2.jpg') "
+  P.innerHTML = 'En esta unidad conoceremos los conceptos básicos y fundamentales de la investigación de mercado, los objetivos que se buscan al realizar estos análisis, las condiciones éticas que se deben considerar con relación a los informantes y los pasos a seguir para la realización de la misma.';
+
+  //childappends del dom
+  fragment.appendChild(clone);
+  menu.appendChild(fragment);
+  mainContainer.appendChild(menu)
+}
